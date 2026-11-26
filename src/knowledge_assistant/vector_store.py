@@ -28,10 +28,7 @@ class VectorStore:
             dtype=np.float32,
         )
 
-        if (
-            embeddings.ndim != 2
-            or embeddings.shape[1] != self.dimension
-        ):
+        if embeddings.ndim != 2 or embeddings.shape[1] != self.dimension:
             raise ValueError("Invalid embedding dimensions.")
 
         if not np.isfinite(embeddings).all():
@@ -83,9 +80,7 @@ class VectorStore:
                 np.array([], dtype=np.int64),
             )
 
-        query = np.ascontiguousarray(
-            query.reshape(1, -1)
-        )
+        query = np.ascontiguousarray(query.reshape(1, -1))
 
         top_k = min(top_k, self.size)
 

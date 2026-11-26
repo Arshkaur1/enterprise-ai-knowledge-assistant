@@ -1,4 +1,3 @@
-
 import argparse
 from pathlib import Path
 
@@ -23,12 +22,7 @@ def main():
     parser.add_argument(
         "--output",
         type=Path,
-        default=(
-            PROJECT_ROOT
-            / "data"
-            / "processed"
-            / "document_chunks.jsonl"
-        ),
+        default=(PROJECT_ROOT / "data" / "processed" / "document_chunks.jsonl"),
         help="Output JSONL file",
     )
 

@@ -24,7 +24,10 @@ class EmbeddingService:
             device=device,
         )
 
-        dimension = self.model.get_sentence_embedding_dimension()
+        if hasattr(self.model, "get_embedding_dimension"):
+            dimension = self.model.get_embedding_dimension()
+        else:
+            dimension = self.model.get_sentence_embedding_dimension()
         if dimension is None:
             raise ValueError("The model does not expose an embedding dimension.")
         self.dimension = dimension

@@ -1,5 +1,3 @@
-
-
 import pymupdf
 import pytest
 from docx import Document

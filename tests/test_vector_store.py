@@ -1,6 +1,6 @@
+import faiss
 import numpy as np
 import pytest
-import faiss
 
 from knowledge_assistant.vector_store import VectorStore
 
@@ -103,9 +103,8 @@ def test_unnormalized_vectors():
     store = VectorStore(dimension=3)
 
     with pytest.raises(ValueError):
-        store.add(
-            np.array([[2.0, 0.0, 0.0]])
-        )
+        store.add(np.array([[2.0, 0.0, 0.0]]))
+
 
 def test_load_unsupported_index_type(tmp_path):
     index = faiss.IndexFlatL2(3)

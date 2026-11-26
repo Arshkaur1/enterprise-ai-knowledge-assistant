@@ -1,11 +1,9 @@
-
 import ollama
 
 from knowledge_assistant.config import DEFAULT_MODEL, OLLAMA_HOST
 
 
 class LocalLLM:
-
     def __init__(
         self,
         model: str = DEFAULT_MODEL,
@@ -21,9 +19,7 @@ class LocalLLM:
 
         response = self.client.chat(
             model=self.model,
-            messages=[
-                {"role": "user", "content": prompt}
-            ],
+            messages=[{"role": "user", "content": prompt}],
         )
 
-        return response.message.content # pyright: ignore[reportReturnType]
+        return response.message.content  # pyright: ignore[reportReturnType]

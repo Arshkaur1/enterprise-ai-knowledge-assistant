@@ -1,4 +1,3 @@
-
 from knowledge_assistant.models import (
     DocumentChunk,
     DocumentUnit,
@@ -20,9 +19,7 @@ def chunk_text(
         raise ValueError("chunk_size must be positive")
 
     if overlap < 0 or overlap >= chunk_size:
-        raise ValueError(
-            "overlap must be >= 0 and < chunk_size"
-        )
+        raise ValueError("overlap must be >= 0 and < chunk_size")
 
     text = " ".join(text.split())
 
@@ -33,7 +30,6 @@ def chunk_text(
     start = 0
 
     while start < len(text):
-
         end = min(start + chunk_size, len(text))
 
         chunk = text[start:end]
@@ -67,18 +63,9 @@ def create_document_chunks(
     document_chunks = []
 
     for index, text in enumerate(text_chunks):
+        page_suffix = f"_p{unit.page_number}" if unit.page_number is not None else ""
 
-        page_suffix = (
-            f"_p{unit.page_number}"
-            if unit.page_number is not None
-            else ""
-        )
-
-        chunk_id = (
-            f"{unit.document_id}"
-            f"{page_suffix}"
-            f"_chunk_{index:04d}"
-        )
+        chunk_id = f"{unit.document_id}{page_suffix}_chunk_{index:04d}"
 
         document_chunks.append(
             DocumentChunk(

@@ -1,4 +1,3 @@
-
 import json
 from pathlib import Path
 
@@ -27,14 +26,10 @@ def process_directory(
     output_file = Path(output_file)
 
     if not input_dir.exists():
-        raise FileNotFoundError(
-            f"Input directory does not exist: {input_dir}"
-        )
+        raise FileNotFoundError(f"Input directory does not exist: {input_dir}")
 
     if not input_dir.is_dir():
-        raise ValueError(
-            f"Expected a directory: {input_dir}"
-        )
+        raise ValueError(f"Expected a directory: {input_dir}")
 
     output_file.parent.mkdir(
         parents=True,
@@ -44,20 +39,17 @@ def process_directory(
     document_paths = sorted(
         path
         for path in input_dir.iterdir()
-        if path.is_file()
-        and path.suffix.lower() in SUPPORTED_EXTENSIONS
+        if path.is_file() and path.suffix.lower() in SUPPORTED_EXTENSIONS
     )
 
     all_chunks = []
 
     for document_path in document_paths:
-
         print(f"Processing: {document_path.name}")
 
         units = load_document(document_path)
 
         for unit in units:
-
             cleaned_text = clean_text(unit.text)
 
             if not cleaned_text:
@@ -78,9 +70,7 @@ def process_directory(
         "w",
         encoding="utf-8",
     ) as file:
-
         for chunk in all_chunks:
-
             file.write(
                 json.dumps(
                     chunk.to_dict(),

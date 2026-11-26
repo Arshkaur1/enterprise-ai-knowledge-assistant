@@ -1,4 +1,3 @@
-
 from unittest.mock import Mock
 
 import ollama
@@ -27,6 +26,7 @@ def test_llm_generate(monkeypatch):
     assert result == "RAG combines retrieval and generation."
 
     fake_client.chat.assert_called_once()
+
 
 def test_empty_prompt():
 

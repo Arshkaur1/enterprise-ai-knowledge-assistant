@@ -1,4 +1,3 @@
-
 import pytest
 
 from knowledge_assistant.chunking import chunk_text
@@ -67,8 +66,6 @@ def test_reconstruction_with_overlap():
         overlap=20,
     )
 
-    reconstructed = chunks[0] + "".join(
-        chunk[20:] for chunk in chunks[1:]
-    )
+    reconstructed = chunks[0] + "".join(chunk[20:] for chunk in chunks[1:])
 
     assert reconstructed == text

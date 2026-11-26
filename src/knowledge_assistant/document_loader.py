@@ -1,4 +1,3 @@
-
 from pathlib import Path
 from typing import cast
 
@@ -61,10 +60,7 @@ def load_docx(path: Path) -> list[DocumentUnit]:
     # Extract tables.
     for table in doc.tables:
         for row in table.rows:
-            cells = [
-                cell.text.strip()
-                for cell in row.cells
-            ]
+            cells = [cell.text.strip() for cell in row.cells]
 
             content.append(" | ".join(cells))
 
@@ -86,9 +82,7 @@ def load_pdf(path: Path) -> list[DocumentUnit]:
     units = []
 
     with pymupdf.open(path) as pdf:
-
         for page_number in range(1, pdf.page_count + 1):
-
             page = pdf.load_page(page_number - 1)
             text = cast(str, page.get_text("text"))
 
@@ -111,21 +105,15 @@ def load_document(path: str | Path) -> list[DocumentUnit]:
     path = Path(path)
 
     if not path.exists():
-        raise FileNotFoundError(
-            f"Document not found: {path}"
-        )
+        raise FileNotFoundError(f"Document not found: {path}")
 
     if not path.is_file():
-        raise ValueError(
-            f"Expected a file, received: {path}"
-        )
+        raise ValueError(f"Expected a file, received: {path}")
 
     extension = path.suffix.lower()
 
     if extension not in SUPPORTED_EXTENSIONS:
-        raise ValueError(
-            f"Unsupported document format: {extension}"
-        )
+        raise ValueError(f"Unsupported document format: {extension}")
 
     if extension == ".txt":
         return load_txt(path)
@@ -136,6 +124,4 @@ def load_document(path: str | Path) -> list[DocumentUnit]:
     if extension == ".pdf":
         return load_pdf(path)
 
-    raise ValueError(
-        f"Unsupported document format: {extension}"
-    )
+    raise ValueError(f"Unsupported document format: {extension}")

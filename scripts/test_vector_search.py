@@ -22,9 +22,7 @@ embeddings = embedding_service.embed_documents(documents)
 embedding_time = perf_counter() - start
 
 # Create and populate the FAISS index
-store = VectorStore(
-    dimension=embedding_service.dimension
-)
+store = VectorStore(dimension=embedding_service.dimension)
 
 store.add(embeddings)
 
@@ -58,10 +56,7 @@ for rank, (score, index) in enumerate(
     zip(scores, indices),
     start=1,
 ):
-    print(
-        f"{rank}. Score: {score:.4f} | "
-        f"{documents[index]}"
-    )
+    print(f"{rank}. Score: {score:.4f} | {documents[index]}")
 
 print(f"\nQuery embedding time: {query_time:.4f}s")
 print(f"FAISS search time: {search_time:.6f}s")
@@ -69,9 +64,7 @@ print(f"FAISS search time: {search_time:.6f}s")
 # Test index persistence
 store.save("artifacts/vector_index.faiss")
 
-loaded_store = VectorStore.load(
-    "artifacts/vector_index.faiss"
-)
+loaded_store = VectorStore.load("artifacts/vector_index.faiss")
 
 print("\nReloaded index size:", loaded_store.size)
 
