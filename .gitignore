@@ -1,0 +1,38 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Virtual environment
+.venv/
+venv/
+
+# Environment variables
+.env
+.env.*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data and model artifacts
+data/raw/*
+data/processed/*
+artifacts/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!artifacts/.gitkeep
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
