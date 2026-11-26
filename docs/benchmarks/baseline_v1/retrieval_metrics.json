@@ -1,0 +1,114 @@
+{
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "embedding_dimension": 384,
+  "index_checksum": "218a4d10a7e86855c8dbddf7319ff23c3c3986c6840ac3ec67ed03535d3b1861",
+  "dataset_size": 30,
+  "calibration_size": 18,
+  "test_size": 12,
+  "indexed_chunks": 6,
+  "warmup_iterations": 5,
+  "repetitions_per_query": 10,
+  "measured_queries": 300,
+  "ranking_metrics": {
+    "calibration": {
+      "top_1": {
+        "precision": 0.9285714285714286,
+        "recall": 0.7857142857142857,
+        "mrr": 0.9285714285714286,
+        "hit_rate": 0.9285714285714286,
+        "complete_recall_rate": 0.6428571428571429
+      },
+      "top_2": {
+        "precision": 0.6428571428571429,
+        "recall": 1.0,
+        "mrr": 0.9642857142857143,
+        "hit_rate": 1.0,
+        "complete_recall_rate": 1.0
+      },
+      "top_3": {
+        "precision": 0.42857142857142866,
+        "recall": 1.0,
+        "mrr": 0.9642857142857143,
+        "hit_rate": 1.0,
+        "complete_recall_rate": 1.0
+      },
+      "top_5": {
+        "precision": 0.2571428571428572,
+        "recall": 1.0,
+        "mrr": 0.9642857142857143,
+        "hit_rate": 1.0,
+        "complete_recall_rate": 1.0
+      }
+    },
+    "test": {
+      "top_1": {
+        "precision": 1.0,
+        "recall": 0.8125,
+        "mrr": 1.0,
+        "hit_rate": 1.0,
+        "complete_recall_rate": 0.625
+      },
+      "top_2": {
+        "precision": 0.6875,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "hit_rate": 1.0,
+        "complete_recall_rate": 1.0
+      },
+      "top_3": {
+        "precision": 0.4583333333333333,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "hit_rate": 1.0,
+        "complete_recall_rate": 1.0
+      },
+      "top_5": {
+        "precision": 0.275,
+        "recall": 1.0,
+        "mrr": 1.0,
+        "hit_rate": 1.0,
+        "complete_recall_rate": 1.0
+      }
+    }
+  },
+  "latency_metrics": {
+    "mean_ms": 3.8068597134648976,
+    "p50_ms": 3.7609375031024683,
+    "p95_ms": 4.674382998564398,
+    "max_ms": 8.537000001524575,
+    "queries_per_second": 262.68370133603577
+  },
+  "selected_threshold": 0.35,
+  "calibration_answerability": {
+    "threshold": 0.35,
+    "true_positive": 14,
+    "true_negative": 2,
+    "false_positive": 2,
+    "false_negative": 0,
+    "accuracy": 0.8888888888888888,
+    "precision": 0.875,
+    "recall": 1.0,
+    "f1": 0.9333333333333333,
+    "false_acceptance_rate": 0.5,
+    "false_rejection_rate": 0.0
+  },
+  "test_answerability": {
+    "true_positive": 8,
+    "true_negative": 3,
+    "false_positive": 1,
+    "false_negative": 0,
+    "accuracy": 0.9166666666666666,
+    "precision": 0.8888888888888888,
+    "recall": 1.0,
+    "f1": 0.9411764705882353,
+    "false_acceptance_rate": 0.25,
+    "false_rejection_rate": 0.0
+  },
+  "test_filtered_ranking_at_5": {
+    "precision": 0.275,
+    "recall": 1.0,
+    "mrr": 1.0,
+    "hit_rate": 1.0,
+    "complete_recall_rate": 1.0
+  }
+}

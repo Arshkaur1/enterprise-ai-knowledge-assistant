@@ -1,0 +1,13 @@
+query_id,query,category,answerable,accepted,top_score,threshold
+hr_005,What benefits are available to eligible full-time employees?,HR,True,True,0.4496772587299347,0.35
+hr_006,Can employees take leave when illness prevents them from working?,HR,True,True,0.7850847244262695,0.35
+it_005,Can company data be stored in unauthorized personal storage?,IT,True,True,0.3827648162841797,0.35
+it_006,What should employees do to keep unattended devices secure?,IT,True,True,0.644206702709198,0.35
+finance_005,Who must approve an expense claim of 500 currency units?,Finance,True,True,0.672540545463562,0.35
+finance_006,Are personal expenses eligible for reimbursement?,Finance,True,True,0.5432862043380737,0.35
+multi_003,What is the minimum password length and how should unattended devices be secured?,multi_chunk,True,True,0.4823642075061798,0.35
+multi_004,How many days can employees work remotely and what is the daily meal reimbursement limit?,multi_chunk,True,True,0.5208622813224792,0.35
+ood_003,How do I bake a chocolate cake?,out_of_domain,False,False,-0.0023946035653352737,0.35
+ood_004,What is the capital of Japan?,out_of_domain,False,False,0.10136601328849792,0.35
+unsupported_003,What is the company's mileage reimbursement rate?,unsupported_policy,False,True,0.425780713558197,0.35
+unsupported_004,How much annual salary increase do employees receive?,unsupported_policy,False,False,0.2124190628528595,0.35
