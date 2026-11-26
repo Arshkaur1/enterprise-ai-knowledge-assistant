@@ -1,35 +1,58 @@
 
 import argparse
+from pathlib import Path
 
-from knowledge_assistant.llm_client import LocalLLM
+from knowledge_assistant.pipeline import process_directory
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+
 
 def main():
+
     parser = argparse.ArgumentParser(
-        description="Enterprise AI Knowledge Assistant"
+        description="Enterprise AI Document Ingestion Pipeline"
     )
 
     parser.add_argument(
-        "--prompt",
-        required=True,
-        help="Question to ask the local LLM",
+        "--input",
+        type=Path,
+        default=PROJECT_ROOT / "data" / "raw",
+        help="Input document directory",
     )
 
     parser.add_argument(
-        "--model",
-        default="qwen2.5:1.5b",
-        help="Ollama model name",
+        "--output",
+        type=Path,
+        default=(
+            PROJECT_ROOT
+            / "data"
+            / "processed"
+            / "document_chunks.jsonl"
+        ),
+        help="Output JSONL file",
+    )
+
+    parser.add_argument(
+        "--chunk-size",
+        type=int,
+        default=800,
+    )
+
+    parser.add_argument(
+        "--overlap",
+        type=int,
+        default=120,
     )
 
     args = parser.parse_args()
 
-    assistant = LocalLLM(model=args.model)
+    process_directory(
+        input_dir=args.input,
+        output_file=args.output,
+        chunk_size=args.chunk_size,
+        overlap=args.overlap,
+    )
 
-    print("\nGenerating response...\n")
-
-    answer = assistant.generate(args.prompt)
-
-    print("Assistant:")
-    print(answer)
 
 if __name__ == "__main__":
     main()

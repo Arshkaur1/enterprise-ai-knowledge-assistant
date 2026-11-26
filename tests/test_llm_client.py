@@ -5,6 +5,7 @@ import ollama
 
 from knowledge_assistant.llm_client import LocalLLM
 
+
 def test_llm_generate(monkeypatch):
 
     fake_response = Mock()

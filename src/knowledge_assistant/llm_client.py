@@ -3,6 +3,7 @@ import ollama
 
 from knowledge_assistant.config import DEFAULT_MODEL, OLLAMA_HOST
 
+
 class LocalLLM:
 
     def __init__(
