@@ -62,9 +62,9 @@ print(f"\nQuery embedding time: {query_time:.4f}s")
 print(f"FAISS search time: {search_time:.6f}s")
 
 # Test index persistence
-store.save("artifacts/vector_index.faiss")
+store.save("artifacts/demo_vector_index.faiss")
 
-loaded_store = VectorStore.load("artifacts/vector_index.faiss")
+loaded_store = VectorStore.load("artifacts/demo_vector_index.faiss")
 
 print("\nReloaded index size:", loaded_store.size)
 

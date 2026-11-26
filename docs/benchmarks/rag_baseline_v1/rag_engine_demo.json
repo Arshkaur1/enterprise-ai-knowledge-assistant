@@ -1,0 +1,286 @@
+{
+  "summary": {
+    "total_queries": 8,
+    "answered": 6,
+    "insufficient_evidence": 2,
+    "invalid_responses": 0,
+    "generation_errors": 0,
+    "mean_retrieval_latency_ms": 27.49,
+    "mean_generation_latency_ms": 831.86,
+    "mean_end_to_end_latency_ms": 755.54,
+    "total_reported_tokens": 3478,
+    "responses_with_token_metrics": 7,
+    "responses_with_warnings": 7
+  },
+  "responses": [
+    {
+      "query": "How many days per week can employees work remotely?",
+      "answer": "Employees may work remotely up to three days per week. [1]",
+      "status": "answered",
+      "citations": [
+        {
+          "citation_id": 1,
+          "chunk_id": "hr_policy_chunk_0000",
+          "document_id": "hr_policy",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "score": 0.5636751651763916,
+          "page_number": null
+        }
+      ],
+      "model": "qwen2.5:1.5b",
+      "retrieved_count": 1,
+      "context_chunk_count": 1,
+      "retrieval_latency_ms": 119.11729100393131,
+      "generation_latency_ms": 613.8222500012489,
+      "total_latency_ms": 733.0902909961878,
+      "prompt_tokens": 405,
+      "completion_tokens": 34,
+      "error_message": null,
+      "warnings": [
+        "answer_level_citations_appended"
+      ],
+      "context_characters": 840,
+      "context_truncated": false,
+      "prompt_version": "1.0",
+      "answered": true,
+      "total_tokens": 439
+    },
+    {
+      "query": "What is the deadline for submitting expense claims?",
+      "answer": "The deadline for submitting expense claims is within 30 calendar days of the transaction. [1]",
+      "status": "answered",
+      "citations": [
+        {
+          "citation_id": 1,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "document_id": "finance_policy",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "score": 0.38643693923950195,
+          "page_number": 1
+        }
+      ],
+      "model": "qwen2.5:1.5b",
+      "retrieved_count": 1,
+      "context_chunk_count": 1,
+      "retrieval_latency_ms": 17.01508399855811,
+      "generation_latency_ms": 788.888125003723,
+      "total_latency_ms": 806.0814580021542,
+      "prompt_tokens": 428,
+      "completion_tokens": 40,
+      "error_message": null,
+      "warnings": [
+        "answer_level_citations_appended"
+      ],
+      "context_characters": 861,
+      "context_truncated": false,
+      "prompt_version": "1.0",
+      "answered": true,
+      "total_tokens": 468
+    },
+    {
+      "query": "What is the minimum password length and how should unattended devices be secured?",
+      "answer": "The minimum password length for Northstar Technologies is 12 characters. Employees must use a combination of uppercase letters, lowercase letters, numbers, and symbols in their passwords. Unattended company devices should use approved security software, enable automatic security updates, and lock the devices when unattended to ensure data security. [1] [2]",
+      "status": "answered",
+      "citations": [
+        {
+          "citation_id": 1,
+          "chunk_id": "it_security_chunk_0000",
+          "document_id": "it_security",
+          "source": "it_security.docx",
+          "category": "IT",
+          "score": 0.4823642075061798,
+          "page_number": null
+        },
+        {
+          "citation_id": 2,
+          "chunk_id": "it_security_chunk_0001",
+          "document_id": "it_security",
+          "source": "it_security.docx",
+          "category": "IT",
+          "score": 0.41653573513031006,
+          "page_number": null
+        }
+      ],
+      "model": "qwen2.5:1.5b",
+      "retrieved_count": 2,
+      "context_chunk_count": 2,
+      "retrieval_latency_ms": 18.480250000720844,
+      "generation_latency_ms": 1479.2085419976502,
+      "total_latency_ms": 1497.8749999936554,
+      "prompt_tokens": 470,
+      "completion_tokens": 87,
+      "error_message": null,
+      "warnings": [
+        "answer_level_citations_appended"
+      ],
+      "context_characters": 1239,
+      "context_truncated": false,
+      "prompt_version": "1.0",
+      "answered": true,
+      "total_tokens": 557
+    },
+    {
+      "query": "What is the company's mileage reimbursement rate?",
+      "answer": "The provided document evidence is insufficient to answer this question.",
+      "status": "insufficient_evidence",
+      "citations": [],
+      "model": "qwen2.5:1.5b",
+      "retrieved_count": 1,
+      "context_chunk_count": 1,
+      "retrieval_latency_ms": 11.573249998036772,
+      "generation_latency_ms": 590.0220000039553,
+      "total_latency_ms": 601.7554579957505,
+      "prompt_tokens": 428,
+      "completion_tokens": 41,
+      "error_message": null,
+      "warnings": [
+        "abstention_citations_removed"
+      ],
+      "context_characters": 861,
+      "context_truncated": false,
+      "prompt_version": "1.0",
+      "answered": false,
+      "total_tokens": 469
+    },
+    {
+      "query": "What is the weather forecast for tomorrow?",
+      "answer": "The provided document evidence is insufficient to answer this question.",
+      "status": "insufficient_evidence",
+      "citations": [],
+      "model": "qwen2.5:1.5b",
+      "retrieved_count": 0,
+      "context_chunk_count": 0,
+      "retrieval_latency_ms": 14.357249994645827,
+      "generation_latency_ms": 0.0,
+      "total_latency_ms": 14.380332999280654,
+      "prompt_tokens": null,
+      "completion_tokens": null,
+      "error_message": null,
+      "warnings": [],
+      "context_characters": 0,
+      "context_truncated": false,
+      "prompt_version": "1.0",
+      "answered": false,
+      "total_tokens": null
+    },
+    {
+      "query": "How many days of annual paid leave do full-time employees receive?",
+      "answer": "20 working days of annual paid leave per calendar year [1] [2]",
+      "status": "answered",
+      "citations": [
+        {
+          "citation_id": 1,
+          "chunk_id": "hr_policy_chunk_0000",
+          "document_id": "hr_policy",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "score": 0.4443451166152954,
+          "page_number": null
+        },
+        {
+          "citation_id": 2,
+          "chunk_id": "hr_policy_chunk_0001",
+          "document_id": "hr_policy",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "score": 0.4219770133495331,
+          "page_number": null
+        }
+      ],
+      "model": "qwen2.5:1.5b",
+      "retrieved_count": 2,
+      "context_chunk_count": 2,
+      "retrieval_latency_ms": 8.614665995992254,
+      "generation_latency_ms": 682.871167002304,
+      "total_latency_ms": 691.7115000032936,
+      "prompt_tokens": 501,
+      "completion_tokens": 38,
+      "error_message": null,
+      "warnings": [
+        "answer_level_citations_appended"
+      ],
+      "context_characters": 1332,
+      "context_truncated": false,
+      "prompt_version": "1.0",
+      "answered": true,
+      "total_tokens": 539
+    },
+    {
+      "query": "Who must approve an expense claim of 500 currency units or more?",
+      "answer": "Both the manager and the Finance department must approve an expense claim of 500 currency units or more. [1] [2]",
+      "status": "answered",
+      "citations": [
+        {
+          "citation_id": 1,
+          "chunk_id": "finance_policy_p1_chunk_0001",
+          "document_id": "finance_policy",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "score": 0.6783517003059387,
+          "page_number": 1
+        },
+        {
+          "citation_id": 2,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "document_id": "finance_policy",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "score": 0.606092095375061,
+          "page_number": 1
+        }
+      ],
+      "model": "qwen2.5:1.5b",
+      "retrieved_count": 2,
+      "context_chunk_count": 2,
+      "retrieval_latency_ms": 16.016916997614317,
+      "generation_latency_ms": 770.2638330010814,
+      "total_latency_ms": 786.5071249980247,
+      "prompt_tokens": 512,
+      "completion_tokens": 48,
+      "error_message": null,
+      "warnings": [
+        "answer_level_citations_appended"
+      ],
+      "context_characters": 1171,
+      "context_truncated": false,
+      "prompt_version": "1.0",
+      "answered": true,
+      "total_tokens": 560
+    },
+    {
+      "query": "How frequently must employees change their passwords?",
+      "answer": "Employees must use unique passwords for company accounts and must change them to at least 12 characters that include a combination of uppercase letters, lowercase letters, numbers, and symbols. [1]",
+      "status": "answered",
+      "citations": [
+        {
+          "citation_id": 1,
+          "chunk_id": "it_security_chunk_0000",
+          "document_id": "it_security",
+          "source": "it_security.docx",
+          "category": "IT",
+          "score": 0.41408586502075195,
+          "page_number": null
+        }
+      ],
+      "model": "qwen2.5:1.5b",
+      "retrieved_count": 1,
+      "context_chunk_count": 1,
+      "retrieval_latency_ms": 14.711499999975786,
+      "generation_latency_ms": 897.9769590005162,
+      "total_latency_ms": 912.8896669935784,
+      "prompt_tokens": 388,
+      "completion_tokens": 58,
+      "error_message": null,
+      "warnings": [
+        "answer_level_citations_appended"
+      ],
+      "context_characters": 844,
+      "context_truncated": false,
+      "prompt_version": "1.0",
+      "answered": true,
+      "total_tokens": 446
+    }
+  ]
+}

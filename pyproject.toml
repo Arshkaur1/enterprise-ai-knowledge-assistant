@@ -25,7 +25,13 @@ where = ["src"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
+markers = [
+    "integration: tests requiring real models and retrieval artifacts",
+]
 
 [tool.ruff]
 line-length = 88
 target-version = "py311"
+
+[project.scripts]
+knowledge-assistant = "knowledge_assistant.qa_cli:main"
