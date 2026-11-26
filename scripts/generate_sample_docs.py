@@ -1,4 +1,3 @@
-
 from pathlib import Path
 
 import pymupdf
@@ -81,34 +80,42 @@ doc.add_heading(
 sections = [
     (
         "1. PASSWORD REQUIREMENTS",
-        "All employees must use unique passwords for company "
-        "accounts. Passwords must contain at least 12 "
-        "characters and include a combination of uppercase "
-        "letters, lowercase letters, numbers and symbols. "
-        "Multi-factor authentication is mandatory."
+        (
+            "All employees must use unique passwords for company "
+            "accounts. Passwords must contain at least 12 "
+            "characters and include a combination of uppercase "
+            "letters, lowercase letters, numbers and symbols. "
+            "Multi-factor authentication is mandatory."
+        ),
     ),
     (
         "2. ACCESS CONTROL",
-        "Employees receive access only to systems and data "
-        "required for their assigned responsibilities. "
-        "Managers must approve access requests. Access "
-        "permissions must be reviewed periodically."
+        (
+            "Employees receive access only to systems and data "
+            "required for their assigned responsibilities. "
+            "Managers must approve access requests. Access "
+            "permissions must be reviewed periodically."
+        ),
     ),
     (
         "3. SECURITY INCIDENT REPORTING",
-        "Employees must report suspected phishing attacks, "
-        "unauthorized access and potential data breaches "
-        "to the IT Security team immediately. Incident "
-        "reports must include the approximate time, affected "
-        "systems and relevant observations."
+        (
+            "Employees must report suspected phishing attacks, "
+            "unauthorized access and potential data breaches "
+            "to the IT Security team immediately. Incident "
+            "reports must include the approximate time, affected "
+            "systems and relevant observations."
+        ),
     ),
     (
         "4. DEVICE SECURITY",
-        "Company devices must use approved security software. "
-        "Employees must enable automatic security updates "
-        "and lock their devices when unattended. Company "
-        "data must not be transferred to unauthorized "
-        "personal storage services."
+        (
+            "Company devices must use approved security software. "
+            "Employees must enable automatic security updates "
+            "and lock their devices when unattended. Company "
+            "data must not be transferred to unauthorized "
+            "personal storage services."
+        ),
     ),
 ]
 
@@ -130,31 +137,39 @@ pdf_path = RAW_DATA_DIR / "finance_policy.pdf"
 finance_sections = [
     (
         "1. BUSINESS EXPENSE ELIGIBILITY",
-        "Employees may claim reimbursement for approved "
-        "business-related travel, accommodation, meals "
-        "and necessary business supplies. Personal expenses "
-        "are not eligible for reimbursement."
+        (
+            "Employees may claim reimbursement for approved "
+            "business-related travel, accommodation, meals "
+            "and necessary business supplies. Personal expenses "
+            "are not eligible for reimbursement."
+        ),
     ),
     (
         "2. EXPENSE LIMITS",
-        "Meal expenses are reimbursable up to 40 currency "
-        "units per employee per day. Accommodation expenses "
-        "are reimbursable up to 150 currency units per night. "
-        "Exceptions require advance approval from Finance."
+        (
+            "Meal expenses are reimbursable up to 40 currency "
+            "units per employee per day. Accommodation expenses "
+            "are reimbursable up to 150 currency units per night. "
+            "Exceptions require advance approval from Finance."
+        ),
     ),
     (
         "3. REIMBURSEMENT PROCESS",
-        "Employees must submit expense claims through the "
-        "finance portal within 30 calendar days of the "
-        "transaction. Each claim must include an itemized "
-        "receipt and a description of the business purpose."
+        (
+            "Employees must submit expense claims through the "
+            "finance portal within 30 calendar days of the "
+            "transaction. Each claim must include an itemized "
+            "receipt and a description of the business purpose."
+        ),
     ),
     (
         "4. APPROVAL WORKFLOW",
-        "Claims below 500 currency units require manager "
-        "approval. Claims of 500 currency units or more "
-        "require both manager and Finance department "
-        "approval. Incomplete claims may be returned."
+        (
+            "Claims below 500 currency units require manager "
+            "approval. Claims of 500 currency units or more "
+            "require both manager and Finance department "
+            "approval. Incomplete claims may be returned."
+        ),
     ),
 ]
 
@@ -178,7 +193,6 @@ page.insert_text(
 y_position = 145
 
 for heading, content in finance_sections:
-
     page.insert_text(
         (60, y_position),
         heading,
@@ -188,10 +202,7 @@ for heading, content in finance_sections:
 
     y_position += 22
 
-    lines = [
-        content[i:i + 85]
-        for i in range(0, len(content), 85)
-    ]
+    lines = [content[i : i + 85] for i in range(0, len(content), 85)]
 
     for line in lines:
         page.insert_text(
