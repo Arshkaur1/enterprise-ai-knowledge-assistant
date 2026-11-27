@@ -60,6 +60,9 @@ class ContextBuilder:
         citations = []
         seen_chunk_ids = set()
 
+        # FIX 1: Create an independent dictionary for each request.
+        source_texts: dict[int, str] = {}
+
         character_count = 0
         truncated = False
 
@@ -92,6 +95,7 @@ class ContextBuilder:
 
             required_chars = len(section) + separator_length
 
+            # Reject chunks that exceed the character budget.
             if character_count + required_chars > self.max_context_chars:
                 truncated = True
                 continue
@@ -105,6 +109,9 @@ class ContextBuilder:
                 )
             )
 
+            # FIX 2: Store source text only for accepted chunks.
+            source_texts[citation_id] = chunk.text.strip()
+
             character_count += required_chars
 
         context_text = separator.join(sections)
@@ -116,4 +123,5 @@ class ContextBuilder:
             included_count=len(citations),
             character_count=len(context_text),
             truncated=truncated,
+            source_texts=source_texts,
         )

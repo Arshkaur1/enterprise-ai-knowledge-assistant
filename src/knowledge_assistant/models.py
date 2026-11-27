@@ -68,14 +68,14 @@ class Citation:
 
 @dataclass
 class ContextBundle:
-    """Context supplied to the language model."""
-
     text: str
     citations: list[Citation]
     retrieved_count: int
     included_count: int
     character_count: int
     truncated: bool = False
+
+    source_texts: dict[int, str] = field(default_factory=dict)
 
 
 @dataclass
@@ -166,5 +166,110 @@ class ValidatedAnswer:
 
         result["status"] = self.status.value
         result["answered"] = self.answered
+
+        return result
+
+
+class EvidenceStatus(StrEnum):
+    SUFFICIENT = "sufficient"
+    INSUFFICIENT = "insufficient"
+    INVALID_RESPONSE = "invalid_response"
+    VERIFICATION_ERROR = "verification_error"
+
+
+@dataclass
+class EvidenceQuote:
+    """An extracted quotation from a retrieved source."""
+
+    citation_id: int
+    quote: str
+
+    def to_dict(self) -> dict:
+        return asdict(self)
+
+
+@dataclass
+class EvidenceVerificationResult:
+    """Structured result of evidence sufficiency verification."""
+
+    status: EvidenceStatus
+    reason: str
+    evidence: list[EvidenceQuote] = field(default_factory=list)
+    missing_information: list[str] = field(default_factory=list)
+
+    latency_ms: float = 0.0
+    prompt_tokens: int | None = None
+    completion_tokens: int | None = None
+
+    model: str | None = None
+    verifier_version: str | None = None
+    error_message: str | None = None
+
+    warnings: list[str] = field(default_factory=list)
+
+    @property
+    def sufficient(self) -> bool:
+        return self.status == EvidenceStatus.SUFFICIENT
+
+    @property
+    def total_tokens(self) -> int | None:
+        if self.prompt_tokens is None or self.completion_tokens is None:
+            return None
+
+        return self.prompt_tokens + self.completion_tokens
+
+    def to_dict(self) -> dict:
+        result = asdict(self)
+
+        result["status"] = self.status.value
+        result["sufficient"] = self.sufficient
+        result["total_tokens"] = self.total_tokens
+
+        return result
+
+
+class GroundingStatus(StrEnum):
+    SUPPORTED = "supported"
+    UNSUPPORTED = "unsupported"
+    INVALID_RESPONSE = "invalid_response"
+    VERIFICATION_ERROR = "verification_error"
+
+
+@dataclass
+class GroundingResult:
+    status: GroundingStatus
+    reason: str
+
+    evidence: list[EvidenceQuote] = field(default_factory=list)
+
+    unsupported_claims: list[str] = field(default_factory=list)
+
+    latency_ms: float = 0.0
+    prompt_tokens: int | None = None
+    completion_tokens: int | None = None
+    model: str | None = None
+    verifier_version: str | None = None
+    error_message: str | None = None
+    llm_requested: bool = False
+
+    @property
+    def supported(self) -> bool:
+        return self.status == GroundingStatus.SUPPORTED
+
+    @property
+    def total_tokens(self) -> int | None:
+
+        if self.prompt_tokens is None or self.completion_tokens is None:
+            return None
+
+        return self.prompt_tokens + self.completion_tokens
+
+    def to_dict(self) -> dict:
+
+        result = asdict(self)
+
+        result["status"] = self.status.value
+        result["supported"] = self.supported
+        result["total_tokens"] = self.total_tokens
 
         return result

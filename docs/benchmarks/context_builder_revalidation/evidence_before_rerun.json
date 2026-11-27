@@ -1,0 +1,381 @@
+{
+  "model": "qwen2.5:1.5b",
+  "verifier_version": "1.1",
+  "summary": {
+    "total_questions": 9,
+    "correct_predictions": 6,
+    "accuracy": 0.6666666666666666,
+    "sufficient": 1,
+    "insufficient": 8,
+    "invalid_responses": 0,
+    "verification_errors": 0,
+    "mean_verification_latency_ms": 1207.6414813329595,
+    "total_reported_tokens": 6583
+  },
+  "results": [
+    {
+      "query_id": "remote_work",
+      "question": "How many days per week can employees work remotely?",
+      "expected_sufficient": true,
+      "expected_status": "sufficient",
+      "correct": false,
+      "context": "[1] Source: hr_policy.txt | Category: HR\nNORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should",
+      "retrieved_chunk_ids": [
+        "hr_policy_chunk_0000"
+      ],
+      "context_citations": [
+        {
+          "citation_id": 1,
+          "chunk_id": "hr_policy_chunk_0000",
+          "document_id": "hr_policy",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "score": 0.5636751651763916,
+          "page_number": null
+        }
+      ],
+      "verification": {
+        "status": "insufficient",
+        "reason": "The document does not provide information about the number of days per week employees can work remotely.",
+        "evidence": [],
+        "missing_information": [
+          "Number of days per week employees can work remotely"
+        ],
+        "latency_ms": 2971.1124999957974,
+        "prompt_tokens": 740,
+        "completion_tokens": 56,
+        "model": "qwen2.5:1.5b",
+        "verifier_version": "1.1",
+        "error_message": null,
+        "warnings": [],
+        "sufficient": false,
+        "total_tokens": 796
+      }
+    },
+    {
+      "query_id": "password_length",
+      "question": "What is the minimum password length?",
+      "expected_sufficient": true,
+      "expected_status": "sufficient",
+      "correct": false,
+      "context": "[1] Source: it_security.docx | Category: IT\nNORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S",
+      "retrieved_chunk_ids": [
+        "it_security_chunk_0000"
+      ],
+      "context_citations": [
+        {
+          "citation_id": 1,
+          "chunk_id": "it_security_chunk_0000",
+          "document_id": "it_security",
+          "source": "it_security.docx",
+          "category": "IT",
+          "score": 0.42293375730514526,
+          "page_number": null
+        }
+      ],
+      "verification": {
+        "status": "insufficient",
+        "reason": "The document does not provide information about the minimum password length.",
+        "evidence": [],
+        "missing_information": [
+          "Minimum password length"
+        ],
+        "latency_ms": 867.2095829970203,
+        "prompt_tokens": 722,
+        "completion_tokens": 44,
+        "model": "qwen2.5:1.5b",
+        "verifier_version": "1.1",
+        "error_message": null,
+        "warnings": [],
+        "sufficient": false,
+        "total_tokens": 766
+      }
+    },
+    {
+      "query_id": "expense_deadline",
+      "question": "What is the deadline for submitting expense claims?",
+      "expected_sufficient": true,
+      "expected_status": "sufficient",
+      "correct": true,
+      "context": "[1] Source: finance_policy.pdf | Category: Finance | Page: 1\nNORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval.",
+      "retrieved_chunk_ids": [
+        "finance_policy_p1_chunk_0000"
+      ],
+      "context_citations": [
+        {
+          "citation_id": 1,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "document_id": "finance_policy",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "score": 0.38643693923950195,
+          "page_number": 1
+        }
+      ],
+      "verification": {
+        "status": "sufficient",
+        "reason": "The document provides the deadline for submitting expense claims.",
+        "evidence": [
+          {
+            "citation_id": 1,
+            "quote": "Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+          }
+        ],
+        "missing_information": [],
+        "latency_ms": 1601.730458001839,
+        "prompt_tokens": 763,
+        "completion_tokens": 92,
+        "model": "qwen2.5:1.5b",
+        "verifier_version": "1.1",
+        "error_message": null,
+        "warnings": [],
+        "sufficient": true,
+        "total_tokens": 855
+      }
+    },
+    {
+      "query_id": "multi_part",
+      "question": "What is the expense submission deadline and who approves claims of 500 currency units or more?",
+      "expected_sufficient": true,
+      "expected_status": "sufficient",
+      "correct": false,
+      "context": "[1] Source: finance_policy.pdf | Category: Finance | Page: 1\nnd a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval. Claims of 500 currency unit s or more require both manager and Finance department approval. Incomplete claims may be returned.\n\n[2] Source: finance_policy.pdf | Category: Finance | Page: 1\nNORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval.",
+      "retrieved_chunk_ids": [
+        "finance_policy_p1_chunk_0001",
+        "finance_policy_p1_chunk_0000"
+      ],
+      "context_citations": [
+        {
+          "citation_id": 1,
+          "chunk_id": "finance_policy_p1_chunk_0001",
+          "document_id": "finance_policy",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "score": 0.5980431437492371,
+          "page_number": 1
+        },
+        {
+          "citation_id": 2,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "document_id": "finance_policy",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "score": 0.558954119682312,
+          "page_number": 1
+        }
+      ],
+      "verification": {
+        "status": "insufficient",
+        "reason": "The document does not provide the expense submission deadline or who approves claims of 500 currency units or more.",
+        "evidence": [],
+        "missing_information": [
+          "Expense submission deadline",
+          "Approver for claims of 500 currency units or more"
+        ],
+        "latency_ms": 1380.0508749991423,
+        "prompt_tokens": 851,
+        "completion_tokens": 70,
+        "model": "qwen2.5:1.5b",
+        "verifier_version": "1.1",
+        "error_message": null,
+        "warnings": [],
+        "sufficient": false,
+        "total_tokens": 921
+      }
+    },
+    {
+      "query_id": "maternity_leave",
+      "question": "How many paid maternity leave days are provided?",
+      "expected_sufficient": false,
+      "expected_status": "insufficient",
+      "correct": true,
+      "context": "[1] Source: hr_policy.txt | Category: HR\nNORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should\n\n[2] Source: hr_policy.txt | Category: HR\nPOLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should notify their manager as soon as reasonably possible. Medical documentation may be requested for extended absences. 4. EMPLOYEE BENEFITS Eligible full-time employees receive health coverage and access to professional development programs. Employees should contact Human Resources for benefit eligibility and enrollment information.",
+      "retrieved_chunk_ids": [
+        "hr_policy_chunk_0000",
+        "hr_policy_chunk_0001"
+      ],
+      "context_citations": [
+        {
+          "citation_id": 1,
+          "chunk_id": "hr_policy_chunk_0000",
+          "document_id": "hr_policy",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "score": 0.4102990925312042,
+          "page_number": null
+        },
+        {
+          "citation_id": 2,
+          "chunk_id": "hr_policy_chunk_0001",
+          "document_id": "hr_policy",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "score": 0.3562226891517639,
+          "page_number": null
+        }
+      ],
+      "verification": {
+        "status": "insufficient",
+        "reason": "The document does not provide information on paid maternity leave days.",
+        "evidence": [],
+        "missing_information": [
+          "Paid maternity leave days"
+        ],
+        "latency_ms": 1025.229541999579,
+        "prompt_tokens": 832,
+        "completion_tokens": 45,
+        "model": "qwen2.5:1.5b",
+        "verifier_version": "1.1",
+        "error_message": null,
+        "warnings": [],
+        "sufficient": false,
+        "total_tokens": 877
+      }
+    },
+    {
+      "query_id": "password_rotation",
+      "question": "How frequently must employees change their passwords?",
+      "expected_sufficient": false,
+      "expected_status": "insufficient",
+      "correct": true,
+      "context": "[1] Source: it_security.docx | Category: IT\nNORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S",
+      "retrieved_chunk_ids": [
+        "it_security_chunk_0000"
+      ],
+      "context_citations": [
+        {
+          "citation_id": 1,
+          "chunk_id": "it_security_chunk_0000",
+          "document_id": "it_security",
+          "source": "it_security.docx",
+          "category": "IT",
+          "score": 0.41408586502075195,
+          "page_number": null
+        }
+      ],
+      "verification": {
+        "status": "insufficient",
+        "reason": "The document does not provide information on how frequently employees must change their passwords.",
+        "evidence": [],
+        "missing_information": [
+          "Frequency of password change"
+        ],
+        "latency_ms": 1052.6168330034125,
+        "prompt_tokens": 723,
+        "completion_tokens": 48,
+        "model": "qwen2.5:1.5b",
+        "verifier_version": "1.1",
+        "error_message": null,
+        "warnings": [],
+        "sufficient": false,
+        "total_tokens": 771
+      }
+    },
+    {
+      "query_id": "mileage_rate",
+      "question": "What is the company's mileage reimbursement rate?",
+      "expected_sufficient": false,
+      "expected_status": "insufficient",
+      "correct": true,
+      "context": "[1] Source: finance_policy.pdf | Category: Finance | Page: 1\nNORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval.",
+      "retrieved_chunk_ids": [
+        "finance_policy_p1_chunk_0000"
+      ],
+      "context_citations": [
+        {
+          "citation_id": 1,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "document_id": "finance_policy",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "score": 0.425780713558197,
+          "page_number": 1
+        }
+      ],
+      "verification": {
+        "status": "insufficient",
+        "reason": "The document does not provide information about the company's mileage reimbursement rate.",
+        "evidence": [],
+        "missing_information": [
+          "Mileage reimbursement rate"
+        ],
+        "latency_ms": 946.044250005798,
+        "prompt_tokens": 763,
+        "completion_tokens": 48,
+        "model": "qwen2.5:1.5b",
+        "verifier_version": "1.1",
+        "error_message": null,
+        "warnings": [],
+        "sufficient": false,
+        "total_tokens": 811
+      }
+    },
+    {
+      "query_id": "out_of_domain",
+      "question": "What is the weather forecast for tomorrow?",
+      "expected_sufficient": false,
+      "expected_status": "insufficient",
+      "correct": true,
+      "context": "",
+      "retrieved_chunk_ids": [],
+      "context_citations": [],
+      "verification": {
+        "status": "insufficient",
+        "reason": "No document evidence is available.",
+        "evidence": [],
+        "missing_information": [
+          "What is the weather forecast for tomorrow?"
+        ],
+        "latency_ms": 0.0023329994291998446,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "model": "qwen2.5:1.5b",
+        "verifier_version": "1.1",
+        "error_message": null,
+        "warnings": [],
+        "sufficient": false,
+        "total_tokens": null
+      }
+    },
+    {
+      "query_id": "partial_support",
+      "question": "What is the minimum password length and how often must employees change their passwords?",
+      "expected_sufficient": false,
+      "expected_status": "insufficient",
+      "correct": true,
+      "context": "[1] Source: it_security.docx | Category: IT\nNORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S",
+      "retrieved_chunk_ids": [
+        "it_security_chunk_0000"
+      ],
+      "context_citations": [
+        {
+          "citation_id": 1,
+          "chunk_id": "it_security_chunk_0000",
+          "document_id": "it_security",
+          "source": "it_security.docx",
+          "category": "IT",
+          "score": 0.46474650502204895,
+          "page_number": null
+        }
+      ],
+      "verification": {
+        "status": "insufficient",
+        "reason": "The document does not provide information about the minimum password length or the frequency of password changes.",
+        "evidence": [],
+        "missing_information": [
+          "Minimum password length",
+          "Frequency of password changes"
+        ],
+        "latency_ms": 1024.776957994618,
+        "prompt_tokens": 730,
+        "completion_tokens": 56,
+        "model": "qwen2.5:1.5b",
+        "verifier_version": "1.1",
+        "error_message": null,
+        "warnings": [],
+        "sufficient": false,
+        "total_tokens": 786
+      }
+    }
+  ]
+}

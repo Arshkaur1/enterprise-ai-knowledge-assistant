@@ -24,6 +24,8 @@ from knowledge_assistant.response_validator import (
     ResponseValidator,
 )
 from knowledge_assistant.retrieval import SemanticRetriever
+from knowledge_assistant.retrieval_interface import RetrieverProtocol
+from knowledge_assistant.retriever_factory import RetrieverFactory
 
 logger = logging.getLogger(__name__)
 
@@ -33,7 +35,7 @@ class RAGEngine:
 
     def __init__(
         self,
-        retriever: SemanticRetriever,
+        retriever: SemanticRetriever | RetrieverProtocol,
         llm: LocalLLM,
         config: RAGConfig | None = None,
     ):
@@ -41,12 +43,15 @@ class RAGEngine:
 
         self.retriever = retriever
         self.llm = llm
+        self._configured_retrieval = False
 
         self.context_builder = ContextBuilder(
             max_context_chars=self.config.max_context_chars
         )
 
-        self.prompt_builder = PromptBuilder()
+        self.prompt_builder = PromptBuilder(
+            version=self.config.prompt_version,
+        )
 
         self.validator = ResponseValidator(normalize=True)
 
@@ -79,6 +84,34 @@ class RAGEngine:
             config=config,
         )
 
+    @classmethod
+    def from_configured_artifacts(
+        cls,
+        artifact_dir: str | Path,
+        config: RAGConfig | None = None,
+        embedding_model: str | None = None,
+        llm_model: str | None = None,
+    ) -> "RAGEngine":
+        config = config or RAGConfig()
+
+        retriever = RetrieverFactory.create(
+            artifact_dir=artifact_dir,
+            config=config,
+            embedding_model=embedding_model,
+        )
+
+        llm = LocalLLM(model=llm_model) if llm_model is not None else LocalLLM()
+
+        engine = cls(
+            retriever=retriever,
+            llm=llm,
+            config=config,
+        )
+
+        engine._configured_retrieval = True
+
+        return engine
+
     def ask(self, query: str) -> RAGResponse:
         """Execute the complete RAG pipeline."""
 
@@ -92,11 +125,16 @@ class RAGEngine:
         # Stage 1: Semantic retrieval
         retrieval_start = perf_counter()
 
-        results = self.retriever.search(
-            query=query,
-            top_k=self.config.top_k,
-            min_score=self.config.min_score,
-        )
+        if getattr(self, "_configured_retrieval", False):
+            results = self.retriever.search(
+                query=query,
+                top_k=self.config.top_k,
+            )
+        else:
+            results = self.retriever.search(
+                query=query,
+                top_k=self.config.top_k,
+            )
 
         retrieval_latency_ms = (perf_counter() - retrieval_start) * 1000
 

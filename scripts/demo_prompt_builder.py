@@ -26,8 +26,10 @@ def main():
 
     queries = [
         "How many days per week can employees work remotely?",
-        "What is the minimum password length and how should "
-        "unattended devices be secured?",
+        (
+            "What is the minimum password length and how should "
+            "unattended devices be secured?"
+        ),
         "What is the company's mileage reimbursement rate?",
         "What is the weather forecast for tomorrow?",
     ]

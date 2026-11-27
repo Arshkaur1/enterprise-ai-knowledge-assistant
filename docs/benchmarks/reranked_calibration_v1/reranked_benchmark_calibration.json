@@ -1,0 +1,6043 @@
+{
+  "created_at": "2026-11-27T15:54:20.359324+00:00",
+  "split": "calibration",
+  "configuration": {
+    "top_k": 2,
+    "candidate_k": 5,
+    "dense_min_score": 0.35,
+    "sparse_min_score": null,
+    "dense_weight": 1.0,
+    "sparse_weight": 1.0,
+    "rrf_k": 60,
+    "warmup_requests": 5,
+    "repetitions": 10,
+    "reranker_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "reranker_device": "cpu",
+    "reranker_batch_size": 8,
+    "reranker_max_length": 512,
+    "reranker_initialization_seconds": 0.029996166995260864,
+    "p95_latency_target_ms": 100.0,
+    "bm25_lexical_overlap_required": true,
+    "bm25_positive_score_required": false,
+    "corpus_checksum": "edb953f359f5f2adc4b86ba51c71bc8762789b9a7329e2878861e332c1332072",
+    "dataset_checksum": "162b810c5730da98215c1c0f2caef40ee8182facc99e2c0f868c0a9c05e8643b",
+    "dependency_versions": {
+      "torch": "2.15.0",
+      "transformers": "5.24.1",
+      "sentence-transformers": "6.3.0",
+      "faiss-cpu": "1.16.0",
+      "rank-bm25": "0.2.2"
+    }
+  },
+  "total_experiments": 7,
+  "total_measured_requests": 1260,
+  "experiments": [
+    {
+      "experiment": "dense_baseline",
+      "configuration": {
+        "top_k": 2,
+        "candidate_k": 2,
+        "dense_min_score": 0.35,
+        "reranking_enabled": false,
+        "score_type": "cosine_similarity"
+      },
+      "summary": {
+        "total_queries": 18,
+        "answerable_queries": 14,
+        "unsupported_queries": 4,
+        "true_positives": 14,
+        "true_negatives": 2,
+        "false_positives": 2,
+        "false_negatives": 0,
+        "answerability_accuracy": 0.8888888888888888,
+        "answerability_precision": 0.875,
+        "answerability_recall": 1.0,
+        "answerability_f1": 0.9333333333333333,
+        "false_acceptance_rate": 0.5,
+        "false_rejection_rate": 0.0,
+        "precision_at_k": 0.6428571428571429,
+        "recall_at_k": 1.0,
+        "mrr": 0.9642857142857143,
+        "hit_at_k": 1.0,
+        "complete_recall_at_k": 1.0,
+        "returned_chunk_micro_precision": 0.8571428571428571,
+        "global_returned_chunk_precision": 0.75,
+        "relevant_chunks_returned": 18,
+        "answerable_chunks_returned": 21,
+        "total_chunks_returned": 24,
+        "measured_requests": 180,
+        "mean_latency_ms": 3.0746345167345783,
+        "p50_latency_ms": 2.983833495818544,
+        "p95_latency_ms": 3.7035232482594425,
+        "max_latency_ms": 5.098374997032806,
+        "min_latency_ms": 2.7021669957321137,
+        "std_latency_ms": 0.34107372598326385,
+        "deterministic_requests": 180,
+        "deterministic_queries": 18,
+        "determinism_rate": 1.0,
+        "mean_candidate_count": null,
+        "max_candidate_count": null,
+        "relative_mean_latency": 1.0,
+        "relative_p95_latency": 1.0,
+        "additional_mean_latency_ms": 0.0,
+        "quality_targets_met": false,
+        "latency_target_met": true,
+        "determinism_target_met": true,
+        "all_targets_met": false
+      },
+      "results": [
+        {
+          "query_id": "hr_001",
+          "query": "How many days per week can employees work remotely?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.5636751651763916,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            3.037582995602861,
+            2.9887919954489917,
+            3.0808330047875643,
+            3.2545830035815015,
+            3.0692920117871836,
+            2.975124996737577,
+            2.9239160066936165,
+            2.874166995752603,
+            2.883332999772392,
+            2.9358329920796677
+          ],
+          "mean_latency_ms": 3.002345700224396,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "hr_002",
+          "query": "How much annual paid leave do full-time employees receive?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.37935900688171387,
+              "chunk_id": "hr_policy_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 0.37542158365249634,
+              "chunk_id": "hr_policy_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            3.0005000007804483,
+            3.4159170027123764,
+            3.2389999978477135,
+            3.1787909974809736,
+            3.572333007468842,
+            3.769667004235089,
+            3.4522909991210327,
+            3.0515830003423616,
+            3.067875004489906,
+            3.431042001466267
+          ],
+          "mean_latency_ms": 3.317899901594501,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0000",
+            "hr_policy_chunk_0001"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "hr_003",
+          "query": "How far in advance should annual leave be requested?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.4391883611679077,
+              "chunk_id": "hr_policy_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": 0.4329325258731842,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            3.014749992871657,
+            3.063541997107677,
+            3.0227920069592074,
+            2.9342920024646446,
+            3.3154589909827337,
+            2.9287500074133277,
+            2.88620799256023,
+            2.856250008335337,
+            2.8637919895118102,
+            2.8750839992426336
+          ],
+          "mean_latency_ms": 2.976091898744926,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0001",
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 0.5,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "hr_004",
+          "query": "When should an employee notify their manager about illness?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0001"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.642638623714447,
+              "chunk_id": "hr_policy_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            2.9060420056339353,
+            3.050500003155321,
+            3.3029580081347376,
+            3.077417000895366,
+            3.0485419993055984,
+            3.173958000843413,
+            3.6597500002244487,
+            3.5704170004464686,
+            3.487792011583224,
+            3.6617500009015203
+          ],
+          "mean_latency_ms": 3.2939126031124033,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0001"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "it_001",
+          "query": "What is the minimum password length?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.42293375730514526,
+              "chunk_id": "it_security_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            3.700041997944936,
+            3.2626669999444857,
+            3.122499998426065,
+            3.0763329996261746,
+            3.077417000895366,
+            3.1066249939613044,
+            3.953082996304147,
+            3.6220000038156286,
+            3.2401250064140186,
+            3.0304590036394075
+          ],
+          "mean_latency_ms": 3.3191251000971533,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "it_002",
+          "query": "Is multi-factor authentication mandatory?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.36395907402038574,
+              "chunk_id": "it_security_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            2.894583987654187,
+            3.0342920072143897,
+            3.126708004856482,
+            2.89649999467656,
+            2.8199579974170774,
+            2.7928750059800223,
+            2.7757080097217113,
+            2.773291998892091,
+            2.902374995755963,
+            2.831749996403232
+          ],
+          "mean_latency_ms": 2.8848041998571716,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "it_003",
+          "query": "Who must approve employee access requests?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.5012747049331665,
+              "chunk_id": "it_security_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 0.39328232407569885,
+              "chunk_id": "it_security_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            2.8281670092837885,
+            2.7798329974757507,
+            2.844292001100257,
+            2.783749994705431,
+            2.732709006522782,
+            2.7746249979827553,
+            2.7672919968608767,
+            2.711167006054893,
+            2.7021669957321137,
+            2.7393750060582533
+          ],
+          "mean_latency_ms": 2.76633770117769,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000",
+            "it_security_chunk_0001"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "it_004",
+          "query": "What information should a security incident report include?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "it_security_chunk_0000",
+            "it_security_chunk_0001"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.6728943586349487,
+              "chunk_id": "it_security_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": 0.3672714829444885,
+              "chunk_id": "it_security_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            2.8814160032197833,
+            2.8162090020487085,
+            2.8537089965539053,
+            2.8454999992391095,
+            2.9072500037727877,
+            2.832958009094,
+            2.8849170048488304,
+            2.850374992704019,
+            2.828249998856336,
+            2.8350409993436188
+          ],
+          "mean_latency_ms": 2.85356250096811,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0001",
+            "it_security_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "finance_001",
+          "query": "What is the daily meal reimbursement limit?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.43760067224502563,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            2.9156249947845936,
+            2.8293749928707257,
+            2.944499996374361,
+            2.85708399314899,
+            2.8974580054637045,
+            2.8292920032981783,
+            2.851124998414889,
+            2.8813749959226698,
+            2.882333006709814,
+            2.8325840103207156
+          ],
+          "mean_latency_ms": 2.872075099730864,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "finance_002",
+          "query": "What is the maximum accommodation allowance per night?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.3501366674900055,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            2.83800000033807,
+            2.818791996105574,
+            2.892624994274229,
+            2.847916999598965,
+            2.817082990077324,
+            2.83033300365787,
+            2.8089170082239434,
+            2.8628750005736947,
+            2.83220800338313,
+            2.9024999967077747
+          ],
+          "mean_latency_ms": 2.8451249992940575,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "finance_003",
+          "query": "What is the deadline for submitting expense claims?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.38643693923950195,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            2.8877500008093193,
+            2.838792002876289,
+            2.9144579893909395,
+            2.854125006706454,
+            2.8389999934006482,
+            2.7844169962918386,
+            2.770207996945828,
+            2.7384580025682226,
+            2.7902919973712415,
+            2.7824999997392297
+          ],
+          "mean_latency_ms": 2.819999998610001,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "finance_004",
+          "query": "Who approves claims below 500 currency units?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000",
+            "finance_policy_p1_chunk_0001"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.6678469777107239,
+              "chunk_id": "finance_policy_p1_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": 0.4586651921272278,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            2.816041000187397,
+            2.791332997730933,
+            2.8685840079560876,
+            2.777417001198046,
+            2.802000002702698,
+            2.8177499916637316,
+            2.784874988719821,
+            2.798750007059425,
+            3.110332996584475,
+            2.8853330004494637
+          ],
+          "mean_latency_ms": 2.845241599425208,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0001",
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "multi_001",
+          "query": "How much annual leave is provided and what medical documentation may be required for extended sick leave?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0000",
+            "hr_policy_chunk_0001"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.6811010837554932,
+              "chunk_id": "hr_policy_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": 0.42738670110702515,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            3.0949999927543104,
+            3.0370410095201805,
+            3.0862499988870695,
+            3.1820000003790483,
+            3.0216250015655532,
+            3.0584999913116917,
+            3.2267080096062273,
+            3.8764159980928525,
+            3.3216250012628734,
+            2.9711250099353492
+          ],
+          "mean_latency_ms": 3.1876290013315156,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0001",
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "multi_002",
+          "query": "What is the expense submission deadline and who approves claims of 500 currency units or more?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000",
+            "finance_policy_p1_chunk_0001"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.5980431437492371,
+              "chunk_id": "finance_policy_p1_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": 0.558954119682312,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            3.1056250008987263,
+            3.4334590018261224,
+            4.197208996629342,
+            3.3781660022214055,
+            3.039583010831848,
+            3.1738329998916015,
+            4.1337500006193295,
+            3.908791986759752,
+            3.234874995541759,
+            3.0176250002114102
+          ],
+          "mean_latency_ms": 3.4622916995431297,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0001",
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "ood_001",
+          "query": "What is the weather forecast for tomorrow?",
+          "answerable": false,
+          "relevant_chunk_ids": [],
+          "candidate_count": null,
+          "results": [],
+          "latencies_ms": [
+            3.093959006946534,
+            3.8490409933729097,
+            3.517541990731843,
+            3.3442089916206896,
+            3.04041599156335,
+            3.276375005953014,
+            5.098374997032806,
+            2.9788749961880967,
+            2.8782919980585575,
+            2.9283330077305436
+          ],
+          "mean_latency_ms": 3.4005416979198344,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": false,
+          "retrieved_chunk_ids": [],
+          "metrics": null
+        },
+        {
+          "query_id": "ood_002",
+          "query": "Who invented the telephone?",
+          "answerable": false,
+          "relevant_chunk_ids": [],
+          "candidate_count": null,
+          "results": [],
+          "latencies_ms": [
+            3.109375000349246,
+            3.348750004079193,
+            3.005000005941838,
+            2.815707994159311,
+            2.860292006516829,
+            2.828208002028987,
+            3.003124991664663,
+            3.068999998504296,
+            2.8472080011852086,
+            2.8264590073376894
+          ],
+          "mean_latency_ms": 2.971312501176726,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": false,
+          "retrieved_chunk_ids": [],
+          "metrics": null
+        },
+        {
+          "query_id": "unsupported_001",
+          "query": "How many paid maternity leave days are provided?",
+          "answerable": false,
+          "relevant_chunk_ids": [],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.4102990925312042,
+              "chunk_id": "hr_policy_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 0.3562226891517639,
+              "chunk_id": "hr_policy_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            3.0024589941604063,
+            3.0724169919267297,
+            3.300000011222437,
+            3.096417000051588,
+            2.914957993198186,
+            3.0612499976996332,
+            3.0477919935947284,
+            3.2380000047851354,
+            3.299292002338916,
+            3.4751250059343874
+          ],
+          "mean_latency_ms": 3.1507709994912148,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0000",
+            "hr_policy_chunk_0001"
+          ],
+          "metrics": null
+        },
+        {
+          "query_id": "unsupported_002",
+          "query": "How frequently must employees change their passwords?",
+          "answerable": false,
+          "relevant_chunk_ids": [],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.41408586502075195,
+              "chunk_id": "it_security_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            3.6077080003451556,
+            3.437916995608248,
+            4.3156250030733645,
+            3.621334006311372,
+            3.088208002736792,
+            3.0432079947786406,
+            3.027665996341966,
+            3.593749992433004,
+            3.0740829970454797,
+            2.9340420005610213
+          ],
+          "mean_latency_ms": 3.3743540989235044,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "metrics": null
+        }
+      ]
+    },
+    {
+      "experiment": "bm25_baseline",
+      "configuration": {
+        "top_k": 2,
+        "candidate_k": 2,
+        "sparse_min_score": null,
+        "reranking_enabled": false,
+        "score_type": "bm25"
+      },
+      "summary": {
+        "total_queries": 18,
+        "answerable_queries": 14,
+        "unsupported_queries": 4,
+        "true_positives": 14,
+        "true_negatives": 0,
+        "false_positives": 4,
+        "false_negatives": 0,
+        "answerability_accuracy": 0.7777777777777778,
+        "answerability_precision": 0.7777777777777778,
+        "answerability_recall": 1.0,
+        "answerability_f1": 0.8750000000000001,
+        "false_acceptance_rate": 1.0,
+        "false_rejection_rate": 0.0,
+        "precision_at_k": 0.6428571428571429,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_at_k": 1.0,
+        "complete_recall_at_k": 1.0,
+        "returned_chunk_micro_precision": 0.6428571428571429,
+        "global_returned_chunk_precision": 0.5,
+        "relevant_chunks_returned": 18,
+        "answerable_chunks_returned": 28,
+        "total_chunks_returned": 36,
+        "measured_requests": 180,
+        "mean_latency_ms": 0.03740626650849461,
+        "p50_latency_ms": 0.03491700044833124,
+        "p95_latency_ms": 0.06908958748681468,
+        "max_latency_ms": 0.0918340083444491,
+        "min_latency_ms": 0.017750004190020263,
+        "std_latency_ms": 0.013411821749109121,
+        "deterministic_requests": 180,
+        "deterministic_queries": 18,
+        "determinism_rate": 1.0,
+        "mean_candidate_count": null,
+        "max_candidate_count": null,
+        "relative_mean_latency": 0.012166085531434808,
+        "relative_p95_latency": 0.018655097553197473,
+        "additional_mean_latency_ms": -3.0372282502260837,
+        "quality_targets_met": false,
+        "latency_target_met": true,
+        "determinism_target_met": true,
+        "all_targets_met": false
+      },
+      "results": [
+        {
+          "query_id": "hr_001",
+          "query": "How many days per week can employees work remotely?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 7.698568565686327,
+              "chunk_id": "hr_policy_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 1.1741201055737487,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            0.03895799454767257,
+            0.03908299549948424,
+            0.03879101132042706,
+            0.04150001041125506,
+            0.04441599594429135,
+            0.038124999264255166,
+            0.03825000021606684,
+            0.03833300434052944,
+            0.04374999844003469,
+            0.04100000660400838
+          ],
+          "mean_latency_ms": 0.04022060165880248,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0000",
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "hr_002",
+          "query": "How much annual paid leave do full-time employees receive?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 4.680671115948316,
+              "chunk_id": "hr_policy_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 1.749427153567376,
+              "chunk_id": "hr_policy_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            0.049959009629674256,
+            0.03983300121035427,
+            0.039874998037703335,
+            0.03908299549948424,
+            0.0390410132240504,
+            0.040875005652196705,
+            0.040458995499648154,
+            0.038040991057641804,
+            0.03825000021606684,
+            0.038124999264255166
+          ],
+          "mean_latency_ms": 0.04035410092910752,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0000",
+            "hr_policy_chunk_0001"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "hr_003",
+          "query": "How far in advance should annual leave be requested?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 3.469579361826033,
+              "chunk_id": "hr_policy_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 3.282509308353621,
+              "chunk_id": "hr_policy_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            0.05208300717640668,
+            0.03949999518226832,
+            0.039417005609720945,
+            0.03866599581670016,
+            0.039000005926936865,
+            0.03858401032630354,
+            0.03862500307150185,
+            0.038582991692237556,
+            0.038124999264255166,
+            0.03804100560955703
+          ],
+          "mean_latency_ms": 0.04006240196758881,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0000",
+            "hr_policy_chunk_0001"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "hr_004",
+          "query": "When should an employee notify their manager about illness?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0001"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 3.629992533592322,
+              "chunk_id": "hr_policy_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": 1.5802438041417022,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            0.051042006816715,
+            0.0397080002585426,
+            0.03949999518226832,
+            0.03904200275428593,
+            0.03866599581670016,
+            0.038875004975125194,
+            0.03875000402331352,
+            0.03854199894703925,
+            0.03866699989885092,
+            0.03850000211969018
+          ],
+          "mean_latency_ms": 0.04012920107925311,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0001",
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "it_001",
+          "query": "What is the minimum password length?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 1.9352043653127011,
+              "chunk_id": "it_security_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 0.7620536949782519,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            0.03599999763537198,
+            0.028875001589767635,
+            0.027709000278264284,
+            0.026833004085347056,
+            0.026749999960884452,
+            0.026709007215686142,
+            0.026749999960884452,
+            0.026666995836421847,
+            0.026708992663770914,
+            0.02679099270608276
+          ],
+          "mean_latency_ms": 0.027979299193248153,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000",
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "it_002",
+          "query": "Is multi-factor authentication mandatory?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 3.91109284591923,
+              "chunk_id": "it_security_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 0.48423616308532025,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            0.024416003725491464,
+            0.02274999860674143,
+            0.018499995348975062,
+            0.018499995348975062,
+            0.01795799471437931,
+            0.01812499249354005,
+            0.017999991541728377,
+            0.017874990589916706,
+            0.017750004190020263,
+            0.018040998838841915
+          ],
+          "mean_latency_ms": 0.019191496539860964,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000",
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "it_003",
+          "query": "Who must approve employee access requests?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 3.193484753183655,
+              "chunk_id": "it_security_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 0.8557216961873813,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            0.038708007195964456,
+            0.02937500539701432,
+            0.02766599936876446,
+            0.027125002816319466,
+            0.026915993657894433,
+            0.026709007215686142,
+            0.026749999960884452,
+            0.026666995836421847,
+            0.033500007702969015,
+            0.02662499900907278
+          ],
+          "mean_latency_ms": 0.029004101816099137,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000",
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "it_004",
+          "query": "What information should a security incident report include?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "it_security_chunk_0000",
+            "it_security_chunk_0001"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 2.994008086091405,
+              "chunk_id": "it_security_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 1.8262755325327302,
+              "chunk_id": "it_security_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            0.04604199784807861,
+            0.03650000144261867,
+            0.03504200140014291,
+            0.03458300489000976,
+            0.03516700235195458,
+            0.037417004932649434,
+            0.03487498906906694,
+            0.034666998544707894,
+            0.034374999813735485,
+            0.03483401087578386
+          ],
+          "mean_latency_ms": 0.036350201116874814,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000",
+            "it_security_chunk_0001"
+          ],
+          "metrics": {
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "finance_001",
+          "query": "What is the daily meal reimbursement limit?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 3.408579482150002,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 0.802340080825138,
+              "chunk_id": "it_security_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            0.03962499613407999,
+            0.03287500294391066,
+            0.030834009521640837,
+            0.030583003535866737,
+            0.03108399687334895,
+            0.03095800639130175,
+            0.03099998866673559,
+            0.030499999411404133,
+            0.030583993066102266,
+            0.030750001315027475
+          ],
+          "mean_latency_ms": 0.03187929978594184,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0000",
+            "it_security_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "finance_002",
+          "query": "What is the maximum accommodation allowance per night?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 3.4314975561427223,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 1.4904847430197974,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            0.044500004150904715,
+            0.035416000173427165,
+            0.034791999496519566,
+            0.034540993510745466,
+            0.034540993510745466,
+            0.03454199759289622,
+            0.03433300298638642,
+            0.03416700928937644,
+            0.034209006116725504,
+            0.03420800203457475
+          ],
+          "mean_latency_ms": 0.03552490088623017,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0000",
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "finance_003",
+          "query": "What is the deadline for submitting expense claims?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 3.26678461375611,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 1.4231254303968899,
+              "chunk_id": "finance_policy_p1_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            0.044625005102716386,
+            0.0355829979525879,
+            0.03516599826980382,
+            0.03500000457279384,
+            0.03691601159516722,
+            0.03545799700077623,
+            0.03516698780003935,
+            0.035083998227491975,
+            0.03487498906906694,
+            0.03470899537205696
+          ],
+          "mean_latency_ms": 0.03625829849625006,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0000",
+            "finance_policy_p1_chunk_0001"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "finance_004",
+          "query": "Who approves claims below 500 currency units?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000",
+            "finance_policy_p1_chunk_0001"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 4.695095006953057,
+              "chunk_id": "finance_policy_p1_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": 3.520630578522765,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            0.03858399577438831,
+            0.03195900353603065,
+            0.030125011107884347,
+            0.029583010473288596,
+            0.02924998989328742,
+            0.029332994017750025,
+            0.029834001907147467,
+            0.029291986720636487,
+            0.029332994017750025,
+            0.02991700603161007
+          ],
+          "mean_latency_ms": 0.03072099934797734,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0001",
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "multi_001",
+          "query": "How much annual leave is provided and what medical documentation may be required for extended sick leave?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0000",
+            "hr_policy_chunk_0001"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 6.645391193255714,
+              "chunk_id": "hr_policy_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": 4.960064104845831,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            0.0744159915484488,
+            0.07158299558795989,
+            0.0918340083444491,
+            0.07416600419674069,
+            0.07079199713189155,
+            0.0661249941913411,
+            0.06558299355674535,
+            0.06454199319705367,
+            0.06474999827332795,
+            0.064957988797687
+          ],
+          "mean_latency_ms": 0.07087489648256451,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0001",
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "multi_002",
+          "query": "What is the expense submission deadline and who approves claims of 500 currency units or more?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000",
+            "finance_policy_p1_chunk_0001"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 8.308226097793865,
+              "chunk_id": "finance_policy_p1_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": 6.1688889150219115,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            0.07108399586286396,
+            0.07095800538081676,
+            0.06837499677203596,
+            0.06899998697917908,
+            0.06770799518562853,
+            0.0738749949960038,
+            0.06579200271517038,
+            0.06424999446608126,
+            0.07183400157373399,
+            0.0652499875286594
+          ],
+          "mean_latency_ms": 0.06881259614601731,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0001",
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "ood_001",
+          "query": "What is the weather forecast for tomorrow?",
+          "answerable": false,
+          "relevant_chunk_ids": [],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.802340080825138,
+              "chunk_id": "it_security_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 0.7620536949782519,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            0.039749997085891664,
+            0.03779100370593369,
+            0.0364580046152696,
+            0.03491700044833124,
+            0.03245800326112658,
+            0.03166700480505824,
+            0.031584000680595636,
+            0.03154200385324657,
+            0.03166700480505824,
+            0.031624993425793946
+          ],
+          "mean_latency_ms": 0.03394590166863054,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000",
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": null
+        },
+        {
+          "query_id": "ood_002",
+          "query": "Who invented the telephone?",
+          "answerable": false,
+          "relevant_chunk_ids": [],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.339598238124521,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 0.29420183590234394,
+              "chunk_id": "finance_policy_p1_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            0.02229200617875904,
+            0.020583989680744708,
+            0.023375003365799785,
+            0.02229200617875904,
+            0.022249994799494743,
+            0.01999999221879989,
+            0.019625003915280104,
+            0.019708997569978237,
+            0.01983299443963915,
+            0.020000006770715117
+          ],
+          "mean_latency_ms": 0.02099599951179698,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0000",
+            "finance_policy_p1_chunk_0001"
+          ],
+          "metrics": null
+        },
+        {
+          "query_id": "unsupported_001",
+          "query": "How many paid maternity leave days are provided?",
+          "answerable": false,
+          "relevant_chunk_ids": [],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 4.103268694300627,
+              "chunk_id": "hr_policy_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 0.6602198788875044,
+              "chunk_id": "hr_policy_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            0.0407920015277341,
+            0.03599999763537198,
+            0.03533299604896456,
+            0.035083998227491975,
+            0.03429201024118811,
+            0.034083001082763076,
+            0.03391598875168711,
+            0.03399999695830047,
+            0.03395900421310216,
+            0.03395900421310216
+          ],
+          "mean_latency_ms": 0.03514179988997057,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0000",
+            "hr_policy_chunk_0001"
+          ],
+          "metrics": null
+        },
+        {
+          "query_id": "unsupported_002",
+          "query": "How frequently must employees change their passwords?",
+          "answerable": false,
+          "relevant_chunk_ids": [],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 2.6481770286022477,
+              "chunk_id": "it_security_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 1.1239607408225611,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            0.038291997043415904,
+            0.031666000722907484,
+            0.031625007977709174,
+            0.031207993743009865,
+            0.031167000997811556,
+            0.04704200546257198,
+            0.047708002966828644,
+            0.03491700044833124,
+            0.032791998819448054,
+            0.0322499981848523
+          ],
+          "mean_latency_ms": 0.03586670063668862,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000",
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": null
+        }
+      ]
+    },
+    {
+      "experiment": "hybrid_baseline",
+      "configuration": {
+        "top_k": 2,
+        "candidate_k": 5,
+        "dense_min_score": 0.35,
+        "sparse_min_score": null,
+        "rrf_k": 60,
+        "reranking_enabled": false,
+        "score_type": "rrf"
+      },
+      "summary": {
+        "total_queries": 18,
+        "answerable_queries": 14,
+        "unsupported_queries": 4,
+        "true_positives": 14,
+        "true_negatives": 0,
+        "false_positives": 4,
+        "false_negatives": 0,
+        "answerability_accuracy": 0.7777777777777778,
+        "answerability_precision": 0.7777777777777778,
+        "answerability_recall": 1.0,
+        "answerability_f1": 0.8750000000000001,
+        "false_acceptance_rate": 1.0,
+        "false_rejection_rate": 0.0,
+        "precision_at_k": 0.6428571428571429,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_at_k": 1.0,
+        "complete_recall_at_k": 1.0,
+        "returned_chunk_micro_precision": 0.6428571428571429,
+        "global_returned_chunk_precision": 0.5,
+        "relevant_chunks_returned": 18,
+        "answerable_chunks_returned": 28,
+        "total_chunks_returned": 36,
+        "measured_requests": 180,
+        "mean_latency_ms": 3.098726884167667,
+        "p50_latency_ms": 2.991625005961396,
+        "p95_latency_ms": 3.702071149018593,
+        "max_latency_ms": 4.828165998333134,
+        "min_latency_ms": 2.721042008488439,
+        "std_latency_ms": 0.33162955022718743,
+        "deterministic_requests": 180,
+        "deterministic_queries": 18,
+        "determinism_rate": 1.0,
+        "mean_candidate_count": null,
+        "max_candidate_count": null,
+        "relative_mean_latency": 1.0078358475786175,
+        "relative_p95_latency": 0.9996079141013813,
+        "additional_mean_latency_ms": 0.024092367433088846,
+        "quality_targets_met": false,
+        "latency_target_met": true,
+        "determinism_target_met": true,
+        "all_targets_met": false
+      },
+      "results": [
+        {
+          "query_id": "hr_001",
+          "query": "How many days per week can employees work remotely?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.03278688524590164,
+              "chunk_id": "hr_policy_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 0.016129032258064516,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            3.2422499934909865,
+            3.326541991555132,
+            3.127832998870872,
+            2.9777079907944426,
+            2.937208002549596,
+            3.166125010466203,
+            3.702625006553717,
+            3.2288750080624595,
+            3.1615000043530017,
+            3.001958000822924
+          ],
+          "mean_latency_ms": 3.1872624007519335,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0000",
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "hr_002",
+          "query": "How much annual paid leave do full-time employees receive?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.03278688524590164,
+              "chunk_id": "hr_policy_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 0.03225806451612903,
+              "chunk_id": "hr_policy_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            3.446667004027404,
+            4.147250001551583,
+            3.2443329982925206,
+            3.107541997451335,
+            3.064457996515557,
+            3.50474999868311,
+            3.988833006587811,
+            3.4387920022709295,
+            3.0452500068349764,
+            3.0310419970192015
+          ],
+          "mean_latency_ms": 3.401891700923443,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0000",
+            "hr_policy_chunk_0001"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "hr_003",
+          "query": "How far in advance should annual leave be requested?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.03252247488101534,
+              "chunk_id": "hr_policy_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 0.03252247488101534,
+              "chunk_id": "hr_policy_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            3.533374998369254,
+            3.8760829920647666,
+            3.456791993812658,
+            3.1657090003136545,
+            3.274333997978829,
+            3.4972499997820705,
+            3.613458000472747,
+            3.1188330031000078,
+            3.0257089965743944,
+            3.0618750024586916
+          ],
+          "mean_latency_ms": 3.3623417984927073,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0000",
+            "hr_policy_chunk_0001"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "hr_004",
+          "query": "When should an employee notify their manager about illness?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0001"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.03278688524590164,
+              "chunk_id": "hr_policy_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": 0.016129032258064516,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            3.4921250044135377,
+            4.145625003729947,
+            3.7020419986220077,
+            3.307417005999014,
+            3.288375010015443,
+            3.5595420049503446,
+            4.828165998333134,
+            3.645208998932503,
+            3.1404580076923594,
+            3.6029170005349442
+          ],
+          "mean_latency_ms": 3.6711876033223234,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0001",
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "it_001",
+          "query": "What is the minimum password length?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.03278688524590164,
+              "chunk_id": "it_security_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 0.016129032258064516,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            4.015417012851685,
+            4.05295800010208,
+            3.3469580084783956,
+            3.5994999925605953,
+            4.601167005603202,
+            3.3853339991765097,
+            3.0330829904414713,
+            3.0262080108514056,
+            3.5856670001521707,
+            3.2629579945933074
+          ],
+          "mean_latency_ms": 3.5909250014810823,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000",
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "it_002",
+          "query": "Is multi-factor authentication mandatory?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.03278688524590164,
+              "chunk_id": "it_security_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 0.016129032258064516,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            3.0287080007838085,
+            2.9214579990366474,
+            3.09370800096076,
+            3.3960840082727373,
+            3.1599170033587143,
+            3.033999993931502,
+            2.8672079934040084,
+            2.8761669964296743,
+            2.9465830011758953,
+            3.0706249963259324
+          ],
+          "mean_latency_ms": 3.039445799367968,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000",
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "it_003",
+          "query": "Who must approve employee access requests?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.03278688524590164,
+              "chunk_id": "it_security_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 0.031754032258064516,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            3.0304590036394075,
+            2.933209005277604,
+            2.927416004240513,
+            2.958957993541844,
+            3.206332999980077,
+            3.04866700025741,
+            2.925249995314516,
+            2.797834007651545,
+            2.7755840128520504,
+            2.908249996835366
+          ],
+          "mean_latency_ms": 2.9511960019590333,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000",
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "it_004",
+          "query": "What information should a security incident report include?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "it_security_chunk_0000",
+            "it_security_chunk_0001"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.03252247488101534,
+              "chunk_id": "it_security_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 0.03252247488101534,
+              "chunk_id": "it_security_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            3.372209001099691,
+            3.242709004553035,
+            3.016582995769568,
+            2.9503340047085658,
+            3.0466250027529895,
+            3.0659170006401837,
+            3.0639160104328766,
+            2.954583993414417,
+            2.883334003854543,
+            2.968249988043681
+          ],
+          "mean_latency_ms": 3.056446100526955,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000",
+            "it_security_chunk_0001"
+          ],
+          "metrics": {
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "finance_001",
+          "query": "What is the daily meal reimbursement limit?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.03278688524590164,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 0.016129032258064516,
+              "chunk_id": "it_security_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            2.995082992129028,
+            3.2954589987639338,
+            3.214124997612089,
+            2.9641669971169904,
+            2.9778330062981695,
+            2.9801250057062134,
+            3.3823749981820583,
+            3.5909580037696287,
+            3.210916998796165,
+            3.0655000009573996
+          ],
+          "mean_latency_ms": 3.1676541999331675,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0000",
+            "it_security_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "finance_002",
+          "query": "What is the maximum accommodation allowance per night?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.03278688524590164,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 0.016129032258064516,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            3.0616670119343325,
+            3.5524590057320893,
+            3.258665994508192,
+            3.003499994520098,
+            2.9567919991677627,
+            2.9866249969927594,
+            2.996916009578854,
+            3.324582998175174,
+            2.9970840114401653,
+            2.9210409993538633
+          ],
+          "mean_latency_ms": 3.105933302140329,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0000",
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "finance_003",
+          "query": "What is the deadline for submitting expense claims?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.03278688524590164,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 0.016129032258064516,
+              "chunk_id": "finance_policy_p1_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            2.9542080010287464,
+            2.951250004116446,
+            3.2431660074507818,
+            2.9864590032957494,
+            2.8954170120414346,
+            2.875583988497965,
+            2.8742920112563297,
+            2.934749994892627,
+            2.935875003458932,
+            3.022083008545451
+          ],
+          "mean_latency_ms": 2.9673084034584463,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0000",
+            "finance_policy_p1_chunk_0001"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "finance_004",
+          "query": "Who approves claims below 500 currency units?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000",
+            "finance_policy_p1_chunk_0001"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.03278688524590164,
+              "chunk_id": "finance_policy_p1_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": 0.03225806451612903,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            3.0989160004537553,
+            2.9422499937936664,
+            2.9770830005872995,
+            3.02808299602475,
+            2.8992919978918508,
+            2.8779169952031225,
+            2.8550419956445694,
+            2.8536660101963207,
+            2.8689169994322583,
+            2.859083004295826
+          ],
+          "mean_latency_ms": 2.926024899352342,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0001",
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "multi_001",
+          "query": "How much annual leave is provided and what medical documentation may be required for extended sick leave?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0000",
+            "hr_policy_chunk_0001"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.03278688524590164,
+              "chunk_id": "hr_policy_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": 0.03225806451612903,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            3.0369169980986044,
+            3.099832989391871,
+            3.0841660045553,
+            3.023124998435378,
+            2.984958002343774,
+            2.9788749961880967,
+            3.0072090012254193,
+            2.988084001117386,
+            2.989541011629626,
+            2.985541010275483
+          ],
+          "mean_latency_ms": 3.017824901326094,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0001",
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "multi_002",
+          "query": "What is the expense submission deadline and who approves claims of 500 currency units or more?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000",
+            "finance_policy_p1_chunk_0001"
+          ],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.03278688524590164,
+              "chunk_id": "finance_policy_p1_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": 0.03225806451612903,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            2.9937090002931654,
+            3.032459004316479,
+            2.994416994624771,
+            2.9817499889759347,
+            2.9839579947292805,
+            2.9772919951938093,
+            2.960040990728885,
+            2.954750001663342,
+            2.9389580013230443,
+            2.9324170027393848
+          ],
+          "mean_latency_ms": 2.9749750974588096,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0001",
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "ood_001",
+          "query": "What is the weather forecast for tomorrow?",
+          "answerable": false,
+          "relevant_chunk_ids": [],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.01639344262295082,
+              "chunk_id": "it_security_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 0.016129032258064516,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            2.850000004400499,
+            2.7911659999517724,
+            2.893208002205938,
+            2.809249999700114,
+            2.7960000006714836,
+            2.781041999696754,
+            2.8066670056432486,
+            2.810209000017494,
+            2.7903339941985905,
+            2.8097080066800117
+          ],
+          "mean_latency_ms": 2.8137584013165906,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000",
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": null
+        },
+        {
+          "query_id": "ood_002",
+          "query": "Who invented the telephone?",
+          "answerable": false,
+          "relevant_chunk_ids": [],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.01639344262295082,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 0.016129032258064516,
+              "chunk_id": "finance_policy_p1_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            2.8220000094734132,
+            2.926166998804547,
+            2.8381250012898818,
+            2.7536660054465756,
+            2.749958002823405,
+            2.746167010627687,
+            2.7254160086158663,
+            2.721042008488439,
+            2.739666000707075,
+            2.735500005655922
+          ],
+          "mean_latency_ms": 2.775770705193281,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0000",
+            "finance_policy_p1_chunk_0001"
+          ],
+          "metrics": null
+        },
+        {
+          "query_id": "unsupported_001",
+          "query": "How many paid maternity leave days are provided?",
+          "answerable": false,
+          "relevant_chunk_ids": [],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.03278688524590164,
+              "chunk_id": "hr_policy_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 0.03225806451612903,
+              "chunk_id": "hr_policy_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            2.882333006709814,
+            2.8769589989678934,
+            2.9524999990826473,
+            2.870167008950375,
+            2.8548330010380596,
+            2.829249991918914,
+            2.823499991791323,
+            2.8440000023692846,
+            2.8406249912222847,
+            2.8632500034291297
+          ],
+          "mean_latency_ms": 2.8637416995479725,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0000",
+            "hr_policy_chunk_0001"
+          ],
+          "metrics": null
+        },
+        {
+          "query_id": "unsupported_002",
+          "query": "How frequently must employees change their passwords?",
+          "answerable": false,
+          "relevant_chunk_ids": [],
+          "candidate_count": null,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.03278688524590164,
+              "chunk_id": "it_security_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 0.016129032258064516,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            2.911709001637064,
+            2.860124994185753,
+            2.916249999543652,
+            2.8395830013323575,
+            2.8422920004231855,
+            2.820332985720597,
+            3.0955840047681704,
+            2.9542080010287464,
+            2.904458000557497,
+            2.889416995458305
+          ],
+          "mean_latency_ms": 2.903395898465533,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000",
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": null
+        }
+      ]
+    },
+    {
+      "experiment": "dense_reranked_unfiltered",
+      "configuration": {
+        "top_k": 2,
+        "candidate_k": 5,
+        "dense_min_score": 0.35,
+        "reranker_min_score": null,
+        "reranking_enabled": true,
+        "score_type": "cross_encoder_logit",
+        "candidate_strategy": "dense"
+      },
+      "summary": {
+        "total_queries": 18,
+        "answerable_queries": 14,
+        "unsupported_queries": 4,
+        "true_positives": 14,
+        "true_negatives": 2,
+        "false_positives": 2,
+        "false_negatives": 0,
+        "answerability_accuracy": 0.8888888888888888,
+        "answerability_precision": 0.875,
+        "answerability_recall": 1.0,
+        "answerability_f1": 0.9333333333333333,
+        "false_acceptance_rate": 0.5,
+        "false_rejection_rate": 0.0,
+        "precision_at_k": 0.6428571428571429,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_at_k": 1.0,
+        "complete_recall_at_k": 1.0,
+        "returned_chunk_micro_precision": 0.8571428571428571,
+        "global_returned_chunk_precision": 0.75,
+        "relevant_chunks_returned": 18,
+        "answerable_chunks_returned": 21,
+        "total_chunks_returned": 24,
+        "measured_requests": 180,
+        "mean_latency_ms": 12.09107825003836,
+        "p50_latency_ms": 11.63291649572784,
+        "p95_latency_ms": 21.330745843442834,
+        "max_latency_ms": 23.46654199936893,
+        "min_latency_ms": 2.6883750106208026,
+        "std_latency_ms": 4.681022232153013,
+        "deterministic_requests": 180,
+        "deterministic_queries": 18,
+        "determinism_rate": 1.0,
+        "mean_candidate_count": 1.4444444444444444,
+        "max_candidate_count": 4,
+        "relative_mean_latency": 3.9325253730904293,
+        "relative_p95_latency": 5.75958200167036,
+        "additional_mean_latency_ms": 9.016443733303781,
+        "quality_targets_met": false,
+        "latency_target_met": true,
+        "determinism_target_met": true,
+        "all_targets_met": false
+      },
+      "results": [
+        {
+          "query_id": "hr_001",
+          "query": "How many days per week can employees work remotely?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "candidate_count": 1,
+          "results": [
+            {
+              "rank": 1,
+              "score": 7.670859336853027,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            10.471333007444628,
+            11.165792006067932,
+            10.545209006522782,
+            10.649207993992604,
+            11.599082994507626,
+            10.507041995879263,
+            11.02116699621547,
+            11.701374998665415,
+            10.459208002430387,
+            10.887416996411048
+          ],
+          "mean_latency_ms": 10.900683399813715,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "hr_002",
+          "query": "How much annual paid leave do full-time employees receive?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "candidate_count": 2,
+          "results": [
+            {
+              "rank": 1,
+              "score": 4.281362533569336,
+              "chunk_id": "hr_policy_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": -3.4827520847320557,
+              "chunk_id": "hr_policy_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            15.474125000764616,
+            15.377999996417202,
+            15.488249991904013,
+            15.833500001463108,
+            16.356791005819105,
+            15.101082986802794,
+            14.436499986913987,
+            14.173917006701231,
+            14.364875009050593,
+            14.103958004852757
+          ],
+          "mean_latency_ms": 15.07109989906894,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0000",
+            "hr_policy_chunk_0001"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "hr_003",
+          "query": "How far in advance should annual leave be requested?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "candidate_count": 2,
+          "results": [
+            {
+              "rank": 1,
+              "score": 1.3658703565597534,
+              "chunk_id": "hr_policy_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": -4.002230167388916,
+              "chunk_id": "hr_policy_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            13.97674999316223,
+            14.102500004810281,
+            14.44833300774917,
+            14.221375007764436,
+            14.506916995742358,
+            14.233333000447601,
+            14.413083001272753,
+            14.107833994785324,
+            14.469874993665144,
+            14.178666999214329
+          ],
+          "mean_latency_ms": 14.265866699861363,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0000",
+            "hr_policy_chunk_0001"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "hr_004",
+          "query": "When should an employee notify their manager about illness?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0001"
+          ],
+          "candidate_count": 1,
+          "results": [
+            {
+              "rank": 1,
+              "score": 7.813541412353516,
+              "chunk_id": "hr_policy_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            8.061333006480709,
+            7.88204200216569,
+            7.794333010679111,
+            7.844499996281229,
+            7.67604100110475,
+            7.638791998033412,
+            7.567042004666291,
+            7.499750005081296,
+            7.5537500088103116,
+            7.498708990169689
+          ],
+          "mean_latency_ms": 7.701629202347249,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0001"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "it_001",
+          "query": "What is the minimum password length?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "candidate_count": 1,
+          "results": [
+            {
+              "rank": 1,
+              "score": -8.391751289367676,
+              "chunk_id": "it_security_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            9.69237499521114,
+            9.738791006384417,
+            9.60841600317508,
+            9.665875011705793,
+            9.693832995253615,
+            9.643500001402572,
+            9.559458994772285,
+            9.54299999284558,
+            9.498083993094042,
+            10.3037919907365
+          ],
+          "mean_latency_ms": 9.694712498458102,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "it_002",
+          "query": "Is multi-factor authentication mandatory?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "candidate_count": 1,
+          "results": [
+            {
+              "rank": 1,
+              "score": 5.444821834564209,
+              "chunk_id": "it_security_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            10.025584007962607,
+            9.9671249918174,
+            10.107417008839548,
+            10.140375001356006,
+            10.54004101024475,
+            10.787375009385869,
+            10.007208009483293,
+            10.727041997597553,
+            10.931457989499904,
+            10.235207999357954
+          ],
+          "mean_latency_ms": 10.346883302554488,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "it_003",
+          "query": "Who must approve employee access requests?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "candidate_count": 4,
+          "results": [
+            {
+              "rank": 1,
+              "score": 5.213164329528809,
+              "chunk_id": "it_security_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 2.1521756649017334,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            23.401707992888987,
+            22.572709000087343,
+            23.278916996787302,
+            22.696374988299794,
+            22.65895799791906,
+            23.46654199936893,
+            22.494416989502497,
+            22.837291995529085,
+            22.513417003210634,
+            21.269499993650243
+          ],
+          "mean_latency_ms": 22.718983495724387,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000",
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "it_004",
+          "query": "What information should a security incident report include?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "it_security_chunk_0000",
+            "it_security_chunk_0001"
+          ],
+          "candidate_count": 2,
+          "results": [
+            {
+              "rank": 1,
+              "score": 6.699337482452393,
+              "chunk_id": "it_security_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": 2.663309097290039,
+              "chunk_id": "it_security_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            16.914165986236185,
+            15.886749999481253,
+            14.841833006357774,
+            15.605292006512173,
+            15.815916995052248,
+            15.456207998795435,
+            15.437333000591025,
+            15.515917009906843,
+            15.471709004486911,
+            15.670499997213483
+          ],
+          "mean_latency_ms": 15.661562500463333,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0001",
+            "it_security_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "finance_001",
+          "query": "What is the daily meal reimbursement limit?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "candidate_count": 1,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.8478365540504456,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            12.474874994950369,
+            11.367375002009794,
+            11.72083399433177,
+            11.955875001149252,
+            11.52529199316632,
+            11.90608399338089,
+            12.831832995289005,
+            12.166832995717414,
+            11.235832993406802,
+            11.666749996948056
+          ],
+          "mean_latency_ms": 11.885158396034967,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "finance_002",
+          "query": "What is the maximum accommodation allowance per night?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "candidate_count": 1,
+          "results": [
+            {
+              "rank": 1,
+              "score": -4.915886878967285,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            11.678417009534314,
+            12.332667000009678,
+            11.143625000840984,
+            11.294125011772849,
+            10.884083996643312,
+            10.724959007347934,
+            10.682583000743762,
+            10.689082992030308,
+            10.80754199938383,
+            10.733458009781316
+          ],
+          "mean_latency_ms": 11.097054302808829,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "finance_003",
+          "query": "What is the deadline for submitting expense claims?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "candidate_count": 1,
+          "results": [
+            {
+              "rank": 1,
+              "score": -0.15478946268558502,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            10.559999995166436,
+            10.930916003417224,
+            11.060457996791229,
+            10.811292013386264,
+            10.620290995575488,
+            10.737707998487167,
+            10.72470800136216,
+            10.659167004632764,
+            10.659708001185209,
+            11.002166007529013
+          ],
+          "mean_latency_ms": 10.776641401753295,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "finance_004",
+          "query": "Who approves claims below 500 currency units?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000",
+            "finance_policy_p1_chunk_0001"
+          ],
+          "candidate_count": 2,
+          "results": [
+            {
+              "rank": 1,
+              "score": 8.437854766845703,
+              "chunk_id": "finance_policy_p1_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": 5.210092544555664,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            15.488000004552305,
+            15.48495799943339,
+            15.506707990425639,
+            15.483458002563566,
+            15.392749992315657,
+            15.278749997378327,
+            15.647874999558553,
+            15.261874999850988,
+            15.313290990889072,
+            15.308292000554502
+          ],
+          "mean_latency_ms": 15.4165956977522,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0001",
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "multi_001",
+          "query": "How much annual leave is provided and what medical documentation may be required for extended sick leave?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0000",
+            "hr_policy_chunk_0001"
+          ],
+          "candidate_count": 2,
+          "results": [
+            {
+              "rank": 1,
+              "score": 1.3343088626861572,
+              "chunk_id": "hr_policy_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": -3.4301443099975586,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            13.983500000904314,
+            14.131834002910182,
+            14.351999998325482,
+            14.262875003623776,
+            14.164124993840232,
+            14.148959002341144,
+            14.977582992287353,
+            16.966791998129338,
+            15.282249994925223,
+            14.249207990360446
+          ],
+          "mean_latency_ms": 14.651912597764749,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0001",
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "multi_002",
+          "query": "What is the expense submission deadline and who approves claims of 500 currency units or more?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000",
+            "finance_policy_p1_chunk_0001"
+          ],
+          "candidate_count": 2,
+          "results": [
+            {
+              "rank": 1,
+              "score": 3.6845364570617676,
+              "chunk_id": "finance_policy_p1_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": 3.5914855003356934,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            16.06887500383891,
+            16.174999997019768,
+            16.241584002273157,
+            16.806042011012323,
+            16.387834009947255,
+            16.29658399906475,
+            16.30745900911279,
+            16.186916996957734,
+            16.248166997684166,
+            15.973209010553546
+          ],
+          "mean_latency_ms": 16.26916710374644,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0001",
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "ood_001",
+          "query": "What is the weather forecast for tomorrow?",
+          "answerable": false,
+          "relevant_chunk_ids": [],
+          "candidate_count": 0,
+          "results": [],
+          "latencies_ms": [
+            2.8986249963054433,
+            2.8188750002300367,
+            2.8900829929625615,
+            2.782708004815504,
+            2.758540998911485,
+            2.756625006441027,
+            2.761666997685097,
+            2.7340410015312955,
+            2.7763750113081187,
+            2.75462499121204
+          ],
+          "mean_latency_ms": 2.793216500140261,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": false,
+          "retrieved_chunk_ids": [],
+          "metrics": null
+        },
+        {
+          "query_id": "ood_002",
+          "query": "Who invented the telephone?",
+          "answerable": false,
+          "relevant_chunk_ids": [],
+          "candidate_count": 0,
+          "results": [],
+          "latencies_ms": [
+            2.7609170065261424,
+            2.6962910051224753,
+            2.798166999127716,
+            2.7206249942537397,
+            2.711499997531064,
+            2.6974169886671007,
+            2.723166995565407,
+            2.6883750106208026,
+            2.6909589942079037,
+            2.6985830045305192
+          ],
+          "mean_latency_ms": 2.718600099615287,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": false,
+          "retrieved_chunk_ids": [],
+          "metrics": null
+        },
+        {
+          "query_id": "unsupported_001",
+          "query": "How many paid maternity leave days are provided?",
+          "answerable": false,
+          "relevant_chunk_ids": [],
+          "candidate_count": 2,
+          "results": [
+            {
+              "rank": 1,
+              "score": -3.9965760707855225,
+              "chunk_id": "hr_policy_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": -10.178775787353516,
+              "chunk_id": "hr_policy_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            13.758083005086519,
+            13.993500004289672,
+            14.193499999237247,
+            15.014749995316379,
+            15.203625007416122,
+            15.136667003389448,
+            15.42199999676086,
+            15.955957991536707,
+            15.344915998866782,
+            15.474125000764616
+          ],
+          "mean_latency_ms": 14.949712400266435,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0000",
+            "hr_policy_chunk_0001"
+          ],
+          "metrics": null
+        },
+        {
+          "query_id": "unsupported_002",
+          "query": "How frequently must employees change their passwords?",
+          "answerable": false,
+          "relevant_chunk_ids": [],
+          "candidate_count": 1,
+          "results": [
+            {
+              "rank": 1,
+              "score": 1.1529103517532349,
+              "chunk_id": "it_security_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            10.919583000941202,
+            10.247041005641222,
+            10.85054200666491,
+            10.813000000780448,
+            10.36766599281691,
+            10.99258300382644,
+            10.487417006515898,
+            11.074667010689154,
+            11.196583000128157,
+            10.250207997160032
+          ],
+          "mean_latency_ms": 10.719929002516437,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "metrics": null
+        }
+      ]
+    },
+    {
+      "experiment": "dense_reranked_calibrated",
+      "configuration": {
+        "top_k": 2,
+        "candidate_k": 5,
+        "dense_min_score": 0.35,
+        "reranker_min_score": -9.0,
+        "reranking_enabled": true,
+        "score_type": "cross_encoder_logit",
+        "candidate_strategy": "dense"
+      },
+      "summary": {
+        "total_queries": 18,
+        "answerable_queries": 14,
+        "unsupported_queries": 4,
+        "true_positives": 14,
+        "true_negatives": 2,
+        "false_positives": 2,
+        "false_negatives": 0,
+        "answerability_accuracy": 0.8888888888888888,
+        "answerability_precision": 0.875,
+        "answerability_recall": 1.0,
+        "answerability_f1": 0.9333333333333333,
+        "false_acceptance_rate": 0.5,
+        "false_rejection_rate": 0.0,
+        "precision_at_k": 0.6428571428571429,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_at_k": 1.0,
+        "complete_recall_at_k": 1.0,
+        "returned_chunk_micro_precision": 0.8571428571428571,
+        "global_returned_chunk_precision": 0.782608695652174,
+        "relevant_chunks_returned": 18,
+        "answerable_chunks_returned": 21,
+        "total_chunks_returned": 23,
+        "measured_requests": 180,
+        "mean_latency_ms": 11.644852988683851,
+        "p50_latency_ms": 10.90995800041128,
+        "p95_latency_ms": 20.424605952575803,
+        "max_latency_ms": 20.8221670036437,
+        "min_latency_ms": 2.673208000487648,
+        "std_latency_ms": 4.353631535038526,
+        "deterministic_requests": 180,
+        "deterministic_queries": 18,
+        "determinism_rate": 1.0,
+        "mean_candidate_count": 1.4444444444444444,
+        "max_candidate_count": 4,
+        "relative_mean_latency": 3.7873942171999326,
+        "relative_p95_latency": 5.514912310102232,
+        "additional_mean_latency_ms": 8.570218471949273,
+        "quality_targets_met": false,
+        "latency_target_met": true,
+        "determinism_target_met": true,
+        "all_targets_met": false
+      },
+      "results": [
+        {
+          "query_id": "hr_001",
+          "query": "How many days per week can employees work remotely?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "candidate_count": 1,
+          "results": [
+            {
+              "rank": 1,
+              "score": 7.670859336853027,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            10.63237500784453,
+            10.135707998415455,
+            9.927084000082687,
+            9.849375011981465,
+            9.874666997347958,
+            9.777290993952192,
+            9.656916998210363,
+            9.850915987044573,
+            9.91716599673964,
+            10.165459010750055
+          ],
+          "mean_latency_ms": 9.978695800236892,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "hr_002",
+          "query": "How much annual paid leave do full-time employees receive?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "candidate_count": 2,
+          "results": [
+            {
+              "rank": 1,
+              "score": 4.281362533569336,
+              "chunk_id": "hr_policy_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": -3.4827520847320557,
+              "chunk_id": "hr_policy_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            13.978916991618462,
+            14.161166007397696,
+            14.009749997057952,
+            14.10349999787286,
+            14.097084000241011,
+            14.50233299692627,
+            14.288291000411846,
+            14.293082989752293,
+            14.134875003946945,
+            14.133874996332452
+          ],
+          "mean_latency_ms": 14.170287398155779,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0000",
+            "hr_policy_chunk_0001"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "hr_003",
+          "query": "How far in advance should annual leave be requested?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "candidate_count": 2,
+          "results": [
+            {
+              "rank": 1,
+              "score": 1.3658703565597534,
+              "chunk_id": "hr_policy_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": -4.002230167388916,
+              "chunk_id": "hr_policy_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            17.805916999350302,
+            14.198166987625882,
+            14.04816699505318,
+            14.062208007089794,
+            13.927166000939906,
+            13.911749992985278,
+            13.944916994660161,
+            13.984916004119441,
+            13.923207996413112,
+            13.899874989874661
+          ],
+          "mean_latency_ms": 14.370629096811172,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0000",
+            "hr_policy_chunk_0001"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "hr_004",
+          "query": "When should an employee notify their manager about illness?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0001"
+          ],
+          "candidate_count": 1,
+          "results": [
+            {
+              "rank": 1,
+              "score": 7.813541412353516,
+              "chunk_id": "hr_policy_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            7.768167008180171,
+            7.767167000565678,
+            7.588874999783002,
+            7.52516598731745,
+            7.522375002736226,
+            7.563374994788319,
+            7.643417004146613,
+            7.539999991422519,
+            7.90949999645818,
+            7.649042003322393
+          ],
+          "mean_latency_ms": 7.647708398872055,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0001"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "it_001",
+          "query": "What is the minimum password length?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "candidate_count": 1,
+          "results": [
+            {
+              "rank": 1,
+              "score": -8.391751289367676,
+              "chunk_id": "it_security_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            9.827625006437302,
+            9.92433400824666,
+            9.712540995678864,
+            9.732792008435354,
+            9.68916600686498,
+            9.827375004533678,
+            9.611292000045069,
+            10.337458006688394,
+            10.104250002768822,
+            15.202791997580789
+          ],
+          "mean_latency_ms": 10.396962503727991,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "it_002",
+          "query": "Is multi-factor authentication mandatory?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "candidate_count": 1,
+          "results": [
+            {
+              "rank": 1,
+              "score": 5.444821834564209,
+              "chunk_id": "it_security_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            12.470458997995593,
+            15.465707998373546,
+            9.801416992559098,
+            9.63941600639373,
+            9.603874990716577,
+            9.591082998667844,
+            9.531249990686774,
+            9.547416004352272,
+            9.634832997107878,
+            9.556125005474314
+          ],
+          "mean_latency_ms": 10.484158198232763,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "it_003",
+          "query": "Who must approve employee access requests?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "candidate_count": 4,
+          "results": [
+            {
+              "rank": 1,
+              "score": 5.213164329528809,
+              "chunk_id": "it_security_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 2.1521756649017334,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            20.41983300296124,
+            20.695291997981258,
+            20.8221670036437,
+            20.5505420017289,
+            20.515291995252483,
+            20.62787499744445,
+            20.545583989587612,
+            20.51775000290945,
+            20.568874999298714,
+            20.522041988442652
+          ],
+          "mean_latency_ms": 20.578525197925046,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000",
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "it_004",
+          "query": "What information should a security incident report include?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "it_security_chunk_0000",
+            "it_security_chunk_0001"
+          ],
+          "candidate_count": 2,
+          "results": [
+            {
+              "rank": 1,
+              "score": 6.699337482452393,
+              "chunk_id": "it_security_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": 2.663309097290039,
+              "chunk_id": "it_security_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            14.050457990379073,
+            14.036791995749809,
+            13.900917008868419,
+            13.946916005806997,
+            13.959791991510428,
+            13.95020799827762,
+            13.935125010902993,
+            13.94816700485535,
+            13.933583002653904,
+            13.907375003327616
+          ],
+          "mean_latency_ms": 13.95693330123322,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0001",
+            "it_security_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "finance_001",
+          "query": "What is the daily meal reimbursement limit?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "candidate_count": 1,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.8478365540504456,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            10.545666998950765,
+            10.613625010591932,
+            10.91275000362657,
+            18.52804199734237,
+            12.740582998958416,
+            11.440499991294928,
+            11.075250004068948,
+            10.870792000787333,
+            11.112624997622333,
+            10.758249991340563
+          ],
+          "mean_latency_ms": 11.859808399458416,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "finance_002",
+          "query": "What is the maximum accommodation allowance per night?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "candidate_count": 1,
+          "results": [
+            {
+              "rank": 1,
+              "score": -4.915886878967285,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            10.832000014488585,
+            11.207542003830895,
+            10.88341600552667,
+            10.784457990666851,
+            10.720833000959828,
+            10.907165997195989,
+            10.769500004244037,
+            10.872083003050648,
+            10.813417000463232,
+            10.669915995094925
+          ],
+          "mean_latency_ms": 10.846033101552166,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "finance_003",
+          "query": "What is the deadline for submitting expense claims?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "candidate_count": 1,
+          "results": [
+            {
+              "rank": 1,
+              "score": -0.15478946268558502,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            10.730166992289014,
+            10.759791010059416,
+            10.742541999206878,
+            10.674833989469334,
+            10.709667010814883,
+            10.76433299749624,
+            10.652457989635877,
+            10.664833011105657,
+            10.64491699798964,
+            10.591333004413173
+          ],
+          "mean_latency_ms": 10.693487500248011,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "finance_004",
+          "query": "Who approves claims below 500 currency units?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000",
+            "finance_policy_p1_chunk_0001"
+          ],
+          "candidate_count": 2,
+          "results": [
+            {
+              "rank": 1,
+              "score": 8.437854766845703,
+              "chunk_id": "finance_policy_p1_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": 5.210092544555664,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            15.091292007127777,
+            15.30404201184865,
+            15.367375002824701,
+            15.290291004930623,
+            15.241959001286887,
+            15.454749998752959,
+            15.379250005935319,
+            15.339582998421974,
+            15.314165997551754,
+            15.238791005685925
+          ],
+          "mean_latency_ms": 15.302149903436657,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0001",
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "multi_001",
+          "query": "How much annual leave is provided and what medical documentation may be required for extended sick leave?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0000",
+            "hr_policy_chunk_0001"
+          ],
+          "candidate_count": 2,
+          "results": [
+            {
+              "rank": 1,
+              "score": 1.3343088626861572,
+              "chunk_id": "hr_policy_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": -3.4301443099975586,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            14.251416010665707,
+            14.639165994594805,
+            14.303584001027048,
+            14.334000006783754,
+            14.245166996261105,
+            14.208041000529192,
+            14.091165998252109,
+            14.13341700390447,
+            14.185916996211745,
+            14.163959000143223
+          ],
+          "mean_latency_ms": 14.255583300837316,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0001",
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "multi_002",
+          "query": "What is the expense submission deadline and who approves claims of 500 currency units or more?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000",
+            "finance_policy_p1_chunk_0001"
+          ],
+          "candidate_count": 2,
+          "results": [
+            {
+              "rank": 1,
+              "score": 3.6845364570617676,
+              "chunk_id": "finance_policy_p1_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": 3.5914855003356934,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            15.977792005287483,
+            15.947375010000542,
+            15.971082990290597,
+            15.967999992426485,
+            16.062291004345752,
+            15.984500001650304,
+            15.980999989551492,
+            16.03045899537392,
+            15.946208994137123,
+            15.96704100666102
+          ],
+          "mean_latency_ms": 15.983574998972472,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0001",
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "ood_001",
+          "query": "What is the weather forecast for tomorrow?",
+          "answerable": false,
+          "relevant_chunk_ids": [],
+          "candidate_count": 0,
+          "results": [],
+          "latencies_ms": [
+            2.872874989407137,
+            2.7963749889750034,
+            2.9424999956972897,
+            2.786458993796259,
+            2.73145800747443,
+            2.7527500060386956,
+            2.7479999989736825,
+            2.754333007032983,
+            2.7422499988460913,
+            2.7415000076871365
+          ],
+          "mean_latency_ms": 2.786849999392871,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": false,
+          "retrieved_chunk_ids": [],
+          "metrics": null
+        },
+        {
+          "query_id": "ood_002",
+          "query": "Who invented the telephone?",
+          "answerable": false,
+          "relevant_chunk_ids": [],
+          "candidate_count": 0,
+          "results": [],
+          "latencies_ms": [
+            2.723165991483256,
+            2.7103339962195605,
+            2.7653339930111542,
+            2.673208000487648,
+            2.681792000657879,
+            2.7129999944008887,
+            2.7036669926019385,
+            2.6980420079780743,
+            2.6990829937858507,
+            2.6777080056490377
+          ],
+          "mean_latency_ms": 2.7045333976275288,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": false,
+          "retrieved_chunk_ids": [],
+          "metrics": null
+        },
+        {
+          "query_id": "unsupported_001",
+          "query": "How many paid maternity leave days are provided?",
+          "answerable": false,
+          "relevant_chunk_ids": [],
+          "candidate_count": 2,
+          "results": [
+            {
+              "rank": 1,
+              "score": -3.9965760707855225,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            13.761082998826168,
+            13.845250010490417,
+            13.92199999827426,
+            13.897167009417899,
+            13.90125000034459,
+            13.889541995013133,
+            13.879000005545095,
+            13.889750000089407,
+            13.855875004082918,
+            13.858499994967133
+          ],
+          "mean_latency_ms": 13.869941701705102,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": null
+        },
+        {
+          "query_id": "unsupported_002",
+          "query": "How frequently must employees change their passwords?",
+          "answerable": false,
+          "relevant_chunk_ids": [],
+          "candidate_count": 1,
+          "results": [
+            {
+              "rank": 1,
+              "score": 1.1529103517532349,
+              "chunk_id": "it_security_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            9.768874995643273,
+            9.759790991665795,
+            9.651749991462566,
+            9.75662498967722,
+            9.653041997808032,
+            9.659959003329277,
+            9.609250002540648,
+            9.673374996054918,
+            9.656583002652042,
+            10.025666008004919
+          ],
+          "mean_latency_ms": 9.721491597883869,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "metrics": null
+        }
+      ]
+    },
+    {
+      "experiment": "dense_expanded_reranked",
+      "configuration": {
+        "top_k": 2,
+        "candidate_k": 5,
+        "dense_min_score": null,
+        "reranker_min_score": -8.75,
+        "reranking_enabled": true,
+        "score_type": "cross_encoder_logit",
+        "candidate_strategy": "dense"
+      },
+      "summary": {
+        "total_queries": 18,
+        "answerable_queries": 14,
+        "unsupported_queries": 4,
+        "true_positives": 14,
+        "true_negatives": 2,
+        "false_positives": 2,
+        "false_negatives": 0,
+        "answerability_accuracy": 0.8888888888888888,
+        "answerability_precision": 0.875,
+        "answerability_recall": 1.0,
+        "answerability_f1": 0.9333333333333333,
+        "false_acceptance_rate": 0.5,
+        "false_rejection_rate": 0.0,
+        "precision_at_k": 0.6428571428571429,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_at_k": 1.0,
+        "complete_recall_at_k": 1.0,
+        "returned_chunk_micro_precision": 0.8181818181818182,
+        "global_returned_chunk_precision": 0.72,
+        "relevant_chunks_returned": 18,
+        "answerable_chunks_returned": 22,
+        "total_chunks_returned": 25,
+        "measured_requests": 180,
+        "mean_latency_ms": 32.33051435009757,
+        "p50_latency_ms": 30.58497950405581,
+        "p95_latency_ms": 41.56375241072965,
+        "max_latency_ms": 132.64812499983236,
+        "min_latency_ms": 24.712583006476052,
+        "std_latency_ms": 10.24882351225052,
+        "deterministic_requests": 180,
+        "deterministic_queries": 18,
+        "determinism_rate": 1.0,
+        "mean_candidate_count": 5,
+        "max_candidate_count": 5,
+        "relative_mean_latency": 10.51523820933171,
+        "relative_p95_latency": 11.222759957093157,
+        "additional_mean_latency_ms": 29.255879833362997,
+        "quality_targets_met": false,
+        "latency_target_met": true,
+        "determinism_target_met": true,
+        "all_targets_met": false
+      },
+      "results": [
+        {
+          "query_id": "hr_001",
+          "query": "How many days per week can employees work remotely?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": 7.670857906341553,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            29.484625003533438,
+            29.427957997540943,
+            29.772167006740347,
+            29.373957993811928,
+            29.42204099963419,
+            29.391292002401315,
+            29.66083399951458,
+            29.806499995174818,
+            29.862208000849932,
+            34.021790997940116
+          ],
+          "mean_latency_ms": 30.02233739971416,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "hr_002",
+          "query": "How much annual paid leave do full-time employees receive?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": 4.281362533569336,
+              "chunk_id": "hr_policy_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": -3.4827520847320557,
+              "chunk_id": "hr_policy_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            33.147792011732236,
+            33.22966699488461,
+            32.73712498776149,
+            32.68704199581407,
+            33.020875009242445,
+            32.635458002914675,
+            32.79974999895785,
+            35.47833301126957,
+            75.32262499444187,
+            41.809709000517614
+          ],
+          "mean_latency_ms": 38.28683760075364,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0000",
+            "hr_policy_chunk_0001"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "hr_003",
+          "query": "How far in advance should annual leave be requested?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": 1.3658713102340698,
+              "chunk_id": "hr_policy_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": -4.002230167388916,
+              "chunk_id": "hr_policy_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            36.744333992828615,
+            32.94945799279958,
+            32.83095799270086,
+            30.882749997545034,
+            31.195208997814916,
+            32.59408399753738,
+            33.462374994996935,
+            34.1164999990724,
+            33.03841700835619,
+            32.75795899389777
+          ],
+          "mean_latency_ms": 33.05720439675497,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0000",
+            "hr_policy_chunk_0001"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "hr_004",
+          "query": "When should an employee notify their manager about illness?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0001"
+          ],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": 7.813542366027832,
+              "chunk_id": "hr_policy_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": -1.9391287565231323,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            28.427625002223067,
+            32.288707996485755,
+            31.093375000637025,
+            27.13204199972097,
+            27.690290997270495,
+            29.09629100759048,
+            28.3009170088917,
+            26.402957999380305,
+            27.452832990093157,
+            27.404957989347167
+          ],
+          "mean_latency_ms": 28.528999799164012,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0001",
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "it_001",
+          "query": "What is the minimum password length?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": -8.391753196716309,
+              "chunk_id": "it_security_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            29.76495800248813,
+            30.129749997286126,
+            29.992499999934807,
+            29.771540997899137,
+            31.414833007147536,
+            32.469124998897314,
+            32.057541990070604,
+            31.542999990051612,
+            32.520875000045635,
+            31.97120899858419
+          ],
+          "mean_latency_ms": 31.16353329824051,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "it_002",
+          "query": "Is multi-factor authentication mandatory?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": 5.444819927215576,
+              "chunk_id": "it_security_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            29.88620800897479,
+            29.338417007238604,
+            30.159375004586764,
+            31.219791009789333,
+            30.43495799647644,
+            30.136041998048313,
+            30.000708007719368,
+            30.271041992818937,
+            29.815250003593974,
+            31.86566701333504
+          ],
+          "mean_latency_ms": 30.312745804258157,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "it_003",
+          "query": "Who must approve employee access requests?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": 5.213164329528809,
+              "chunk_id": "it_security_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 2.1521756649017334,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            27.749167013098486,
+            27.246083991485648,
+            26.860166995902546,
+            25.75308398809284,
+            25.68495800369419,
+            25.83141600189265,
+            30.7659169920953,
+            25.823082993156277,
+            25.962875006371178,
+            26.014667004346848
+          ],
+          "mean_latency_ms": 26.769141799013596,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000",
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "it_004",
+          "query": "What information should a security incident report include?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "it_security_chunk_0000",
+            "it_security_chunk_0001"
+          ],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": 6.699337482452393,
+              "chunk_id": "it_security_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": 2.663309097290039,
+              "chunk_id": "it_security_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            28.527292000944726,
+            40.576541010523215,
+            30.080417011049576,
+            27.94658299535513,
+            27.60708300047554,
+            27.183291997062042,
+            27.818333997856826,
+            27.316708001308143,
+            26.702207993366756,
+            26.80208299716469
+          ],
+          "mean_latency_ms": 29.056054100510664,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0001",
+            "it_security_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "finance_001",
+          "query": "What is the daily meal reimbursement limit?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.8478363752365112,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            32.79012499842793,
+            31.47466600057669,
+            38.054207994719036,
+            39.42000000097323,
+            36.56237499671988,
+            36.65391600225121,
+            36.54770800494589,
+            37.20949999114964,
+            93.45050000410993,
+            132.64812499983236
+          ],
+          "mean_latency_ms": 51.48111229937058,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "finance_002",
+          "query": "What is the maximum accommodation allowance per night?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": -4.915887355804443,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            44.08904101001099,
+            42.13687499577645,
+            41.562167010852136,
+            39.36233300191816,
+            42.79470800247509,
+            37.10966699873097,
+            40.308124996954575,
+            41.33966600056738,
+            38.858374988194555,
+            37.09658401203342
+          ],
+          "mean_latency_ms": 40.46575410175137,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "finance_003",
+          "query": "What is the deadline for submitting expense claims?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": -0.1547894924879074,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            36.79391701007262,
+            40.705375009565614,
+            50.34433300897945,
+            33.74825000355486,
+            30.369415995664895,
+            30.38024999841582,
+            30.13837500475347,
+            41.59387500840239,
+            30.146292003337294,
+            29.758541990304366
+          ],
+          "mean_latency_ms": 35.39786250330508,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "finance_004",
+          "query": "Who approves claims below 500 currency units?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000",
+            "finance_policy_p1_chunk_0001"
+          ],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": 8.437854766845703,
+              "chunk_id": "finance_policy_p1_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": 5.210092544555664,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            31.282958007068373,
+            30.048542001168244,
+            29.760958001133986,
+            29.883333001635037,
+            29.70770800311584,
+            29.74325000832323,
+            29.626624993397854,
+            30.037208998692222,
+            29.765708997729234,
+            29.670249990886077
+          ],
+          "mean_latency_ms": 29.95265420031501,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0001",
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "multi_001",
+          "query": "How much annual leave is provided and what medical documentation may be required for extended sick leave?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0000",
+            "hr_policy_chunk_0001"
+          ],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": 1.3343088626861572,
+              "chunk_id": "hr_policy_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": -3.4301464557647705,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            32.825417001731694,
+            31.332042010035366,
+            30.851707997499034,
+            30.781416993704624,
+            30.877416997100227,
+            30.81012499751523,
+            30.90650000376627,
+            30.808625000645407,
+            30.822250002529472,
+            30.840292005450465
+          ],
+          "mean_latency_ms": 31.08557930099778,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0001",
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "multi_002",
+          "query": "What is the expense submission deadline and who approves claims of 500 currency units or more?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000",
+            "finance_policy_p1_chunk_0001"
+          ],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": 3.6845364570617676,
+              "chunk_id": "finance_policy_p1_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": 3.5914855003356934,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            32.210582998231985,
+            31.47283299767878,
+            30.902041005901992,
+            30.922332996851765,
+            30.77320900047198,
+            30.845916000544094,
+            30.735874999663793,
+            30.692041997099295,
+            30.71708299103193,
+            30.689834005897865
+          ],
+          "mean_latency_ms": 30.996174899337348,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0001",
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "ood_001",
+          "query": "What is the weather forecast for tomorrow?",
+          "answerable": false,
+          "relevant_chunk_ids": [],
+          "candidate_count": 5,
+          "results": [],
+          "latencies_ms": [
+            30.266207992099226,
+            29.431584000121802,
+            28.892290996736847,
+            28.894124989164993,
+            28.75895900069736,
+            29.03370899730362,
+            28.800792002584785,
+            28.823874992667697,
+            29.02154199546203,
+            28.789749994757585
+          ],
+          "mean_latency_ms": 29.071283496159595,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": false,
+          "retrieved_chunk_ids": [],
+          "metrics": null
+        },
+        {
+          "query_id": "ood_002",
+          "query": "Who invented the telephone?",
+          "answerable": false,
+          "relevant_chunk_ids": [],
+          "candidate_count": 5,
+          "results": [],
+          "latencies_ms": [
+            26.272250004694797,
+            25.259333007852547,
+            25.009417004184797,
+            24.805082997772843,
+            24.81195800646674,
+            24.841958991601132,
+            24.851041001966223,
+            24.712583006476052,
+            24.801374995149672,
+            24.89487500861287
+          ],
+          "mean_latency_ms": 25.025987402477767,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": false,
+          "retrieved_chunk_ids": [],
+          "metrics": null
+        },
+        {
+          "query_id": "unsupported_001",
+          "query": "How many paid maternity leave days are provided?",
+          "answerable": false,
+          "relevant_chunk_ids": [],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": -3.996575117111206,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            31.075624996447004,
+            29.978917009430006,
+            29.57254200009629,
+            29.55333300633356,
+            32.386624996433966,
+            31.834624998737127,
+            31.043583992868662,
+            30.893292001564987,
+            31.036416010465473,
+            30.94995800347533
+          ],
+          "mean_latency_ms": 30.83249170158524,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": null
+        },
+        {
+          "query_id": "unsupported_002",
+          "query": "How frequently must employees change their passwords?",
+          "answerable": false,
+          "relevant_chunk_ids": [],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": 1.1529121398925781,
+              "chunk_id": "it_security_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": -5.310790538787842,
+              "chunk_id": "it_security_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            31.800374999875203,
+            31.340665998868644,
+            30.943042002036236,
+            32.0053339964943,
+            30.480125002213754,
+            29.773834001389332,
+            29.43345799576491,
+            29.59795799688436,
+            29.607624994241633,
+            29.452624992700294
+          ],
+          "mean_latency_ms": 30.443504198046867,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000",
+            "it_security_chunk_0001"
+          ],
+          "metrics": null
+        }
+      ]
+    },
+    {
+      "experiment": "hybrid_reranked",
+      "configuration": {
+        "top_k": 2,
+        "candidate_k": 5,
+        "dense_min_score": 0.35,
+        "reranker_min_score": -8.75,
+        "reranking_enabled": true,
+        "score_type": "cross_encoder_logit",
+        "candidate_strategy": "hybrid"
+      },
+      "summary": {
+        "total_queries": 18,
+        "answerable_queries": 14,
+        "unsupported_queries": 4,
+        "true_positives": 14,
+        "true_negatives": 2,
+        "false_positives": 2,
+        "false_negatives": 0,
+        "answerability_accuracy": 0.8888888888888888,
+        "answerability_precision": 0.875,
+        "answerability_recall": 1.0,
+        "answerability_f1": 0.9333333333333333,
+        "false_acceptance_rate": 0.5,
+        "false_rejection_rate": 0.0,
+        "precision_at_k": 0.6428571428571429,
+        "recall_at_k": 1.0,
+        "mrr": 1.0,
+        "hit_at_k": 1.0,
+        "complete_recall_at_k": 1.0,
+        "returned_chunk_micro_precision": 0.8181818181818182,
+        "global_returned_chunk_precision": 0.72,
+        "relevant_chunks_returned": 18,
+        "answerable_chunks_returned": 22,
+        "total_chunks_returned": 25,
+        "measured_requests": 180,
+        "mean_latency_ms": 26.949515978453242,
+        "p50_latency_ms": 29.429145499307197,
+        "p95_latency_ms": 31.064797261205968,
+        "max_latency_ms": 33.15499999735039,
+        "min_latency_ms": 12.95166599447839,
+        "std_latency_ms": 5.163611102223814,
+        "deterministic_requests": 180,
+        "deterministic_queries": 18,
+        "determinism_rate": 1.0,
+        "mean_candidate_count": 4.555555555555555,
+        "max_candidate_count": 5,
+        "relative_mean_latency": 8.765112026087259,
+        "relative_p95_latency": 8.38790394411743,
+        "additional_mean_latency_ms": 23.874881461718665,
+        "quality_targets_met": false,
+        "latency_target_met": true,
+        "determinism_target_met": true,
+        "all_targets_met": false
+      },
+      "results": [
+        {
+          "query_id": "hr_001",
+          "query": "How many days per week can employees work remotely?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": 7.670857906341553,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            29.72058301384095,
+            29.753250011708587,
+            29.90900000440888,
+            29.597541011753492,
+            29.644582988112234,
+            29.705458000535145,
+            29.64470800361596,
+            29.371625001658686,
+            29.383790999418125,
+            29.320125002413988
+          ],
+          "mean_latency_ms": 29.605066403746605,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "hr_002",
+          "query": "How much annual paid leave do full-time employees receive?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": 4.281362533569336,
+              "chunk_id": "hr_policy_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": -3.4827520847320557,
+              "chunk_id": "hr_policy_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            30.777957988902926,
+            30.37449999828823,
+            29.691165997064672,
+            29.484250000678003,
+            29.47654199670069,
+            29.29825001046993,
+            29.282917006639764,
+            29.37045799626503,
+            29.384208988631144,
+            29.428750000079162
+          ],
+          "mean_latency_ms": 29.656899998371955,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0000",
+            "hr_policy_chunk_0001"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "hr_003",
+          "query": "How far in advance should annual leave be requested?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": 1.3658713102340698,
+              "chunk_id": "hr_policy_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": -4.002230167388916,
+              "chunk_id": "hr_policy_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            30.938041003537364,
+            29.889125013141893,
+            29.565000004367903,
+            29.59450001071673,
+            29.736582990153693,
+            29.4226670084754,
+            29.43766600219533,
+            29.48491700226441,
+            29.893792001530528,
+            29.652500001247972
+          ],
+          "mean_latency_ms": 29.761479103763122,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0000",
+            "hr_policy_chunk_0001"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "hr_004",
+          "query": "When should an employee notify their manager about illness?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0001"
+          ],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": 7.813542366027832,
+              "chunk_id": "hr_policy_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": -1.9391297101974487,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            30.668499995954335,
+            29.87912499520462,
+            29.581458002212457,
+            29.66741699492559,
+            29.68341700034216,
+            33.15499999735039,
+            30.81520801060833,
+            29.6921669942094,
+            29.626499992446043,
+            29.896042004111223
+          ],
+          "mean_latency_ms": 30.266483398736455,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0001",
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "it_001",
+          "query": "What is the minimum password length?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": -8.391753196716309,
+              "chunk_id": "it_security_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            30.83166599390097,
+            29.324584000278264,
+            29.01737501088064,
+            29.14904200588353,
+            29.125000000931323,
+            29.159042009268887,
+            29.345917006139643,
+            29.820582989486866,
+            29.431667004246265,
+            29.165167012251914
+          ],
+          "mean_latency_ms": 29.43700430332683,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "it_002",
+          "query": "Is multi-factor authentication mandatory?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "candidate_count": 2,
+          "results": [
+            {
+              "rank": 1,
+              "score": 5.444821834564209,
+              "chunk_id": "it_security_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            13.530458993045613,
+            13.77166699967347,
+            13.25708300282713,
+            13.106958998832852,
+            13.10641600866802,
+            12.974541998119093,
+            12.95166599447839,
+            13.056875002803281,
+            12.986499990802258,
+            13.05375000811182
+          ],
+          "mean_latency_ms": 13.179591699736193,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "it_003",
+          "query": "Who must approve employee access requests?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "it_security_chunk_0000"
+          ],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": 5.213164329528809,
+              "chunk_id": "it_security_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": 2.1521756649017334,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            26.258415993652306,
+            25.14891700411681,
+            25.09187499526888,
+            24.905500002205372,
+            24.89216699905228,
+            24.816541001200676,
+            24.956666995421983,
+            24.860124991391785,
+            24.950709004770033,
+            24.893916997825727
+          ],
+          "mean_latency_ms": 25.077483398490585,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000",
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "it_004",
+          "query": "What information should a security incident report include?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "it_security_chunk_0000",
+            "it_security_chunk_0001"
+          ],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": 6.699337482452393,
+              "chunk_id": "it_security_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": 2.663309097290039,
+              "chunk_id": "it_security_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            26.282375009031966,
+            25.446790998103097,
+            25.36912499635946,
+            25.203957993653603,
+            25.290167002822272,
+            25.798458998906426,
+            25.424584004213102,
+            25.387042012880556,
+            25.43825001339428,
+            25.110000002314337
+          ],
+          "mean_latency_ms": 25.47507510316791,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0001",
+            "it_security_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "finance_001",
+          "query": "What is the daily meal reimbursement limit?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": 0.8478363752365112,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            30.623250000644475,
+            30.896750002284534,
+            30.542459004209377,
+            29.93041700392496,
+            29.81854100653436,
+            29.67495800112374,
+            29.850541992345825,
+            29.87354199285619,
+            29.830375002347864,
+            29.841415991540998
+          ],
+          "mean_latency_ms": 30.088224999781232,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "finance_002",
+          "query": "What is the maximum accommodation allowance per night?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": -4.915887355804443,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            30.796416001976468,
+            30.594166004448198,
+            29.73108300648164,
+            29.496082992409356,
+            29.337083993596025,
+            29.42954099853523,
+            29.592874998343177,
+            29.843541997252032,
+            29.55258300062269,
+            29.528208004194312
+          ],
+          "mean_latency_ms": 29.790158099785913,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "finance_003",
+          "query": "What is the deadline for submitting expense claims?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": -0.1547894924879074,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            31.093416007934138,
+            30.084083002293482,
+            29.57145900290925,
+            29.76341699832119,
+            29.964792003738694,
+            29.905667004641145,
+            29.93304200936109,
+            29.75216599588748,
+            29.727959001320414,
+            29.697167003178038
+          ],
+          "mean_latency_ms": 29.949316802958492,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 0.5,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "finance_004",
+          "query": "Who approves claims below 500 currency units?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000",
+            "finance_policy_p1_chunk_0001"
+          ],
+          "candidate_count": 2,
+          "results": [
+            {
+              "rank": 1,
+              "score": 8.437854766845703,
+              "chunk_id": "finance_policy_p1_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": 5.210092544555664,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            16.098833992145956,
+            15.845292000449263,
+            17.930750007508323,
+            15.510583005379885,
+            15.39770899398718,
+            15.427583013661206,
+            15.354791001300327,
+            15.515292005147785,
+            15.43137499538716,
+            15.370291992439888
+          ],
+          "mean_latency_ms": 15.788250100740697,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0001",
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "multi_001",
+          "query": "How much annual leave is provided and what medical documentation may be required for extended sick leave?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "hr_policy_chunk_0000",
+            "hr_policy_chunk_0001"
+          ],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": 1.3343088626861572,
+              "chunk_id": "hr_policy_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": -3.4301443099975586,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            28.447999997297302,
+            27.757999996538274,
+            27.158416996826418,
+            26.850791997276247,
+            27.005832991562784,
+            27.809457998955622,
+            27.221583004575223,
+            27.189999993424863,
+            27.47520900447853,
+            26.888541993685067
+          ],
+          "mean_latency_ms": 27.380583397462033,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0001",
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "multi_002",
+          "query": "What is the expense submission deadline and who approves claims of 500 currency units or more?",
+          "answerable": true,
+          "relevant_chunk_ids": [
+            "finance_policy_p1_chunk_0000",
+            "finance_policy_p1_chunk_0001"
+          ],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": 3.6845364570617676,
+              "chunk_id": "finance_policy_p1_chunk_0001"
+            },
+            {
+              "rank": 2,
+              "score": 3.5914855003356934,
+              "chunk_id": "finance_policy_p1_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            32.00150000338908,
+            31.1926249996759,
+            30.670459003886208,
+            30.875249998643994,
+            30.93658400757704,
+            31.06329101137817,
+            31.117750011617318,
+            31.26979200169444,
+            30.957124996348284,
+            31.608375007635914
+          ],
+          "mean_latency_ms": 31.169275104184635,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "finance_policy_p1_chunk_0001",
+            "finance_policy_p1_chunk_0000"
+          ],
+          "metrics": {
+            "precision_at_k": 1.0,
+            "recall_at_k": 1.0,
+            "reciprocal_rank": 1.0,
+            "hit_at_k": 1.0,
+            "complete_recall_at_k": 1.0
+          }
+        },
+        {
+          "query_id": "ood_001",
+          "query": "What is the weather forecast for tomorrow?",
+          "answerable": false,
+          "relevant_chunk_ids": [],
+          "candidate_count": 5,
+          "results": [],
+          "latencies_ms": [
+            31.546708007226698,
+            30.469999997876585,
+            30.030791996978223,
+            31.22908400837332,
+            29.808166000293568,
+            29.934709004010074,
+            29.149708003387786,
+            29.38358299434185,
+            29.284042000654154,
+            28.9291660010349
+          ],
+          "mean_latency_ms": 29.976595801417716,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": false,
+          "retrieved_chunk_ids": [],
+          "metrics": null
+        },
+        {
+          "query_id": "ood_002",
+          "query": "Who invented the telephone?",
+          "answerable": false,
+          "relevant_chunk_ids": [],
+          "candidate_count": 5,
+          "results": [],
+          "latencies_ms": [
+            29.51145799306687,
+            28.734332998283207,
+            28.29570799076464,
+            28.92812500067521,
+            28.880458005005494,
+            28.778292005881667,
+            28.75149999454152,
+            28.708375000860542,
+            28.542250001919456,
+            28.750750003382564
+          ],
+          "mean_latency_ms": 28.788124899438117,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": false,
+          "retrieved_chunk_ids": [],
+          "metrics": null
+        },
+        {
+          "query_id": "unsupported_001",
+          "query": "How many paid maternity leave days are provided?",
+          "answerable": false,
+          "relevant_chunk_ids": [],
+          "candidate_count": 3,
+          "results": [
+            {
+              "rank": 1,
+              "score": -3.996575117111206,
+              "chunk_id": "hr_policy_chunk_0000"
+            }
+          ],
+          "latencies_ms": [
+            20.996042003389448,
+            19.872083008522168,
+            19.936333992518485,
+            19.870916003128514,
+            19.594333003624342,
+            19.59812499990221,
+            19.636583005194552,
+            19.67595799942501,
+            19.84766699024476,
+            19.655124997370876
+          ],
+          "mean_latency_ms": 19.868316600332037,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "hr_policy_chunk_0000"
+          ],
+          "metrics": null
+        },
+        {
+          "query_id": "unsupported_002",
+          "query": "How frequently must employees change their passwords?",
+          "answerable": false,
+          "relevant_chunk_ids": [],
+          "candidate_count": 5,
+          "results": [
+            {
+              "rank": 1,
+              "score": 1.1529121398925781,
+              "chunk_id": "it_security_chunk_0000"
+            },
+            {
+              "rank": 2,
+              "score": -5.310790538787842,
+              "chunk_id": "it_security_chunk_0001"
+            }
+          ],
+          "latencies_ms": [
+            30.85149999242276,
+            29.701958992518485,
+            29.528957995353267,
+            29.801208002027124,
+            29.73412499704864,
+            29.68358299403917,
+            29.824333993019536,
+            29.708749993005767,
+            29.585917000076734,
+            29.913250007666647
+          ],
+          "mean_latency_ms": 29.833358396717813,
+          "deterministic_requests": 10,
+          "determinism_rate": 1.0,
+          "deterministic": true,
+          "predicted_answerable": true,
+          "retrieved_chunk_ids": [
+            "it_security_chunk_0000",
+            "it_security_chunk_0001"
+          ],
+          "metrics": null
+        }
+      ]
+    }
+  ],
+  "benchmark_runtime_seconds": 16.8944793749979
+}

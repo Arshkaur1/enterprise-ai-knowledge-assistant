@@ -226,3 +226,113 @@ def test_contiguous_citation_ids():
 def test_invalid_context_budget(budget):
     with pytest.raises(ValueError):
         ContextBuilder(max_context_chars=budget)
+
+
+def test_source_texts_match_included_chunks(sample_chunks):
+    from knowledge_assistant.context_builder import ContextBuilder
+    from knowledge_assistant.retrieval import SearchResult
+
+    results = [
+        SearchResult(
+            rank=index + 1,
+            score=0.9,
+            chunk=chunk,
+        )
+        for index, chunk in enumerate(sample_chunks)
+    ]
+
+    context = ContextBuilder(max_context_chars=10000).build(results)
+
+    chunks_by_id = {chunk.chunk_id: chunk.text.strip() for chunk in sample_chunks}
+
+    assert len(context.source_texts) == context.included_count
+
+    for citation in context.citations:
+        assert (
+            context.source_texts[citation.citation_id]
+            == (chunks_by_id[citation.chunk_id])
+        )
+
+
+def test_empty_context_has_no_source_texts():
+    from knowledge_assistant.context_builder import ContextBuilder
+
+    context = ContextBuilder().build([])
+
+    assert context.source_texts == {}
+
+
+def test_excluded_chunks_have_no_source_texts(sample_chunks):
+    from knowledge_assistant.context_builder import ContextBuilder
+    from knowledge_assistant.retrieval import SearchResult
+
+    results = [
+        SearchResult(
+            rank=index + 1,
+            score=0.9,
+            chunk=chunk,
+        )
+        for index, chunk in enumerate(sample_chunks)
+    ]
+
+    context = ContextBuilder(max_context_chars=1).build(results)
+
+    assert context.source_texts == {}
+    assert context.included_count == 0
+    assert context.truncated is True
+
+
+def test_source_texts_isolated_between_requests(sample_chunks):
+    from knowledge_assistant.context_builder import ContextBuilder
+    from knowledge_assistant.retrieval import SearchResult
+
+    builder = ContextBuilder()
+
+    first_context = builder.build(
+        [
+            SearchResult(
+                rank=1,
+                score=0.9,
+                chunk=sample_chunks[0],
+            )
+        ]
+    )
+
+    second_context = builder.build(
+        [
+            SearchResult(
+                rank=1,
+                score=0.9,
+                chunk=sample_chunks[1],
+            )
+        ]
+    )
+
+    assert first_context.source_texts == {1: sample_chunks[0].text.strip()}
+
+    assert second_context.source_texts == {1: sample_chunks[1].text.strip()}
+
+    assert first_context.source_texts is not second_context.source_texts
+
+
+def test_empty_request_after_populated_request(sample_chunks):
+    from knowledge_assistant.context_builder import ContextBuilder
+    from knowledge_assistant.retrieval import SearchResult
+
+    builder = ContextBuilder()
+
+    populated = builder.build(
+        [
+            SearchResult(
+                rank=1,
+                score=0.9,
+                chunk=sample_chunks[0],
+            )
+        ]
+    )
+
+    empty = builder.build([])
+
+    assert populated.source_texts
+    assert empty.source_texts == {}
+    assert empty.citations == []

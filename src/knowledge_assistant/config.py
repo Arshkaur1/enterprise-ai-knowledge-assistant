@@ -1,8 +1,10 @@
 import os
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from math import isfinite
 
 from dotenv import load_dotenv
+
+from knowledge_assistant.retrieval_config import RetrievalConfig
 
 load_dotenv()
 
@@ -15,6 +17,11 @@ OLLAMA_HOST = os.getenv(
 DEFAULT_MODEL = os.getenv(
     "OLLAMA_MODEL",
     "qwen2.5:1.5b",
+)
+
+RAG_PROMPT_VERSION = os.getenv(
+    "RAG_PROMPT_VERSION",
+    "1.0",
 )
 
 # Document processing configuration
@@ -40,6 +47,7 @@ LLM_CONTEXT_WINDOW = int(os.getenv("LLM_CONTEXT_WINDOW", "4096"))
 class RAGConfig:
     """Validated configuration for the RAG pipeline."""
 
+    prompt_version: str = RAG_PROMPT_VERSION
     top_k: int = RAG_TOP_K
     min_score: float = RAG_MIN_SCORE
 
@@ -48,6 +56,10 @@ class RAGConfig:
     temperature: float = LLM_TEMPERATURE
     max_tokens: int = LLM_MAX_TOKENS
     context_window: int = LLM_CONTEXT_WINDOW
+
+    retrieval: RetrievalConfig = field(
+        default_factory=RetrievalConfig,
+    )
 
     def __post_init__(self) -> None:
         if self.top_k <= 0:
@@ -70,3 +82,6 @@ class RAGConfig:
 
         if self.max_tokens >= self.context_window:
             raise ValueError("max_tokens must be smaller than context_window.")
+
+        if self.prompt_version not in {"1.0", "2.0"}:
+            raise ValueError("Unsupported prompt version.")

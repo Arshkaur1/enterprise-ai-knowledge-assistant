@@ -34,18 +34,23 @@ For insufficient evidence, use an empty citations list.
 
 
 class PromptBuilder:
-    """Build evidence-grounded messages for LLM generation."""
+    """Construct version-controlled grounded RAG prompts."""
+
+    def __init__(self, version: str = PROMPT_VERSION):
+        from knowledge_assistant.prompts import get_system_prompt
+
+        self._version = version
+        self._system_prompt = get_system_prompt(version)
 
     @property
     def version(self) -> str:
-        return PROMPT_VERSION
+        return self._version
 
     def build(
         self,
         query: str,
         context: ContextBundle,
     ) -> list[dict[str, str]]:
-        """Construct system and user messages."""
 
         query = query.strip()
 
@@ -60,19 +65,17 @@ class PromptBuilder:
             "question": query,
         }
 
-        user_message = json.dumps(
-            payload,
-            ensure_ascii=False,
-            indent=2,
-        )
-
         return [
             {
                 "role": "system",
-                "content": SYSTEM_PROMPT,
+                "content": self._system_prompt,
             },
             {
                 "role": "user",
-                "content": user_message,
+                "content": json.dumps(
+                    payload,
+                    ensure_ascii=False,
+                    indent=2,
+                ),
             },
         ]

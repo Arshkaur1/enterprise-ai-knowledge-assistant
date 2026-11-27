@@ -1,0 +1,1316 @@
+{
+  "configuration": {
+    "top_k": 2,
+    "candidate_k": 5,
+    "rrf_k": 60,
+    "dense_weight": 1.0,
+    "sparse_weight": 1.0,
+    "dense_min_score": 0.35,
+    "sparse_min_score": null,
+    "warmup_requests": 5
+  },
+  "total_questions": 14,
+  "results": [
+    {
+      "query": "How many days per week can employees work remotely?",
+      "dense_results": [
+        {
+          "rank": 1,
+          "score": 0.5636751651763916,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        }
+      ],
+      "sparse_results": [
+        {
+          "rank": 1,
+          "score": 7.698568565686327,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        },
+        {
+          "rank": 2,
+          "score": 1.1741201055737487,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        }
+      ],
+      "hybrid_results": [
+        {
+          "rank": 1,
+          "score": 0.03278688524590164,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        },
+        {
+          "rank": 2,
+          "score": 0.016129032258064516,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        }
+      ],
+      "dense_candidates": [
+        {
+          "rank": 1,
+          "score": 0.5636751651763916,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        }
+      ],
+      "sparse_candidates": [
+        {
+          "rank": 1,
+          "score": 7.698568565686327,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        },
+        {
+          "rank": 2,
+          "score": 1.1741201055737487,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        },
+        {
+          "rank": 3,
+          "score": 0.4289873957923671,
+          "chunk_id": "hr_policy_chunk_0001",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": " POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should notify their manager as soon as reasonably possible. Medical documentation may be requested for extended absences. 4. EMPLOYEE BENEFITS Eligible full-time employees receive health coverage and access to professional development programs. Employees should contact Human Resources for benefit eligibility and enrollment information."
+        },
+        {
+          "rank": 4,
+          "score": 0.3454366032498709,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        },
+        {
+          "rank": 5,
+          "score": 0.27792427530938646,
+          "chunk_id": "it_security_chunk_0001",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE SECURITY Company devices must use approved security software. Employees must enable automatic security updates and lock their devices when unattended. Company data must not be transferred to unauthorized personal storage services."
+        }
+      ],
+      "dense_latency_ms": 5.367375000787433,
+      "sparse_latency_ms": 0.06683299579890445,
+      "fusion_latency_ms": 0.012459000572562218,
+      "combined_latency_ms": 5.4466669971589
+    },
+    {
+      "query": "What is the minimum password length?",
+      "dense_results": [
+        {
+          "rank": 1,
+          "score": 0.42293375730514526,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        }
+      ],
+      "sparse_results": [
+        {
+          "rank": 1,
+          "score": 1.9352043653127011,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        },
+        {
+          "rank": 2,
+          "score": 0.7620536949782519,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        }
+      ],
+      "hybrid_results": [
+        {
+          "rank": 1,
+          "score": 0.03278688524590164,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        },
+        {
+          "rank": 2,
+          "score": 0.016129032258064516,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        }
+      ],
+      "dense_candidates": [
+        {
+          "rank": 1,
+          "score": 0.42293375730514526,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        }
+      ],
+      "sparse_candidates": [
+        {
+          "rank": 1,
+          "score": 1.9352043653127011,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        },
+        {
+          "rank": 2,
+          "score": 0.7620536949782519,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        },
+        {
+          "rank": 3,
+          "score": 0.339598238124521,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        },
+        {
+          "rank": 4,
+          "score": 0.29420183590234394,
+          "chunk_id": "finance_policy_p1_chunk_0001",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "nd a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval. Claims of 500 currency unit s or more require both manager and Finance department approval. Incomplete claims may be returned."
+        },
+        {
+          "rank": 5,
+          "score": 0.27792427530938646,
+          "chunk_id": "it_security_chunk_0001",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE SECURITY Company devices must use approved security software. Employees must enable automatic security updates and lock their devices when unattended. Company data must not be transferred to unauthorized personal storage services."
+        }
+      ],
+      "dense_latency_ms": 3.51175000105286,
+      "sparse_latency_ms": 0.0603340013185516,
+      "fusion_latency_ms": 0.013707998732570559,
+      "combined_latency_ms": 3.5857920011039823
+    },
+    {
+      "query": "Is multi-factor authentication mandatory?",
+      "dense_results": [
+        {
+          "rank": 1,
+          "score": 0.36395907402038574,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        }
+      ],
+      "sparse_results": [
+        {
+          "rank": 1,
+          "score": 3.91109284591923,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        },
+        {
+          "rank": 2,
+          "score": 0.48423616308532025,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        }
+      ],
+      "hybrid_results": [
+        {
+          "rank": 1,
+          "score": 0.03278688524590164,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        },
+        {
+          "rank": 2,
+          "score": 0.016129032258064516,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        }
+      ],
+      "dense_candidates": [
+        {
+          "rank": 1,
+          "score": 0.36395907402038574,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        }
+      ],
+      "sparse_candidates": [
+        {
+          "rank": 1,
+          "score": 3.91109284591923,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        },
+        {
+          "rank": 2,
+          "score": 0.48423616308532025,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        }
+      ],
+      "dense_latency_ms": 4.953834002662916,
+      "sparse_latency_ms": 0.04916699981549755,
+      "fusion_latency_ms": 0.013874996511731297,
+      "combined_latency_ms": 5.016875998990145
+    },
+    {
+      "query": "What is the expense submission deadline?",
+      "dense_results": [
+        {
+          "rank": 1,
+          "score": 0.4216862916946411,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        }
+      ],
+      "sparse_results": [
+        {
+          "rank": 1,
+          "score": 2.5229259503684105,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        },
+        {
+          "rank": 2,
+          "score": 0.802340080825138,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        }
+      ],
+      "hybrid_results": [
+        {
+          "rank": 1,
+          "score": 0.03278688524590164,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        },
+        {
+          "rank": 2,
+          "score": 0.016129032258064516,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        }
+      ],
+      "dense_candidates": [
+        {
+          "rank": 1,
+          "score": 0.4216862916946411,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        }
+      ],
+      "sparse_candidates": [
+        {
+          "rank": 1,
+          "score": 2.5229259503684105,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        },
+        {
+          "rank": 2,
+          "score": 0.802340080825138,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        },
+        {
+          "rank": 3,
+          "score": 0.7620536949782519,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        },
+        {
+          "rank": 4,
+          "score": 0.29420183590234394,
+          "chunk_id": "finance_policy_p1_chunk_0001",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "nd a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval. Claims of 500 currency unit s or more require both manager and Finance department approval. Incomplete claims may be returned."
+        },
+        {
+          "rank": 5,
+          "score": 0.27792427530938646,
+          "chunk_id": "it_security_chunk_0001",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE SECURITY Company devices must use approved security software. Employees must enable automatic security updates and lock their devices when unattended. Company data must not be transferred to unauthorized personal storage services."
+        }
+      ],
+      "dense_latency_ms": 3.6042919964529574,
+      "sparse_latency_ms": 0.04845800140174106,
+      "fusion_latency_ms": 0.011333002476021647,
+      "combined_latency_ms": 3.66408300033072
+    },
+    {
+      "query": "Who approves claims of 500 currency units or more?",
+      "dense_results": [
+        {
+          "rank": 1,
+          "score": 0.6597214341163635,
+          "chunk_id": "finance_policy_p1_chunk_0001",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "nd a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval. Claims of 500 currency unit s or more require both manager and Finance department approval. Incomplete claims may be returned."
+        },
+        {
+          "rank": 2,
+          "score": 0.4508284032344818,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        }
+      ],
+      "sparse_results": [
+        {
+          "rank": 1,
+          "score": 7.719822425989177,
+          "chunk_id": "finance_policy_p1_chunk_0001",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "nd a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval. Claims of 500 currency unit s or more require both manager and Finance department approval. Incomplete claims may be returned."
+        },
+        {
+          "rank": 2,
+          "score": 3.3063647265289804,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        }
+      ],
+      "hybrid_results": [
+        {
+          "rank": 1,
+          "score": 0.03278688524590164,
+          "chunk_id": "finance_policy_p1_chunk_0001",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "nd a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval. Claims of 500 currency unit s or more require both manager and Finance department approval. Incomplete claims may be returned."
+        },
+        {
+          "rank": 2,
+          "score": 0.03225806451612903,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        }
+      ],
+      "dense_candidates": [
+        {
+          "rank": 1,
+          "score": 0.6597214341163635,
+          "chunk_id": "finance_policy_p1_chunk_0001",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "nd a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval. Claims of 500 currency unit s or more require both manager and Finance department approval. Incomplete claims may be returned."
+        },
+        {
+          "rank": 2,
+          "score": 0.4508284032344818,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        }
+      ],
+      "sparse_candidates": [
+        {
+          "rank": 1,
+          "score": 7.719822425989177,
+          "chunk_id": "finance_policy_p1_chunk_0001",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "nd a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval. Claims of 500 currency unit s or more require both manager and Finance department approval. Incomplete claims may be returned."
+        },
+        {
+          "rank": 2,
+          "score": 3.3063647265289804,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        },
+        {
+          "rank": 3,
+          "score": 0.2778175318929316,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        },
+        {
+          "rank": 4,
+          "score": 0.25180236036385345,
+          "chunk_id": "hr_policy_chunk_0001",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": " POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should notify their manager as soon as reasonably possible. Medical documentation may be requested for extended absences. 4. EMPLOYEE BENEFITS Eligible full-time employees receive health coverage and access to professional development programs. Employees should contact Human Resources for benefit eligibility and enrollment information."
+        },
+        {
+          "rank": 5,
+          "score": 0.19546322659121682,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        }
+      ],
+      "dense_latency_ms": 4.200167000817601,
+      "sparse_latency_ms": 0.07075000030454248,
+      "fusion_latency_ms": 0.013833996490575373,
+      "combined_latency_ms": 4.2847509976127185
+    },
+    {
+      "query": "How many paid maternity leave days are provided?",
+      "dense_results": [
+        {
+          "rank": 1,
+          "score": 0.4102990925312042,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        },
+        {
+          "rank": 2,
+          "score": 0.3562226891517639,
+          "chunk_id": "hr_policy_chunk_0001",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": " POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should notify their manager as soon as reasonably possible. Medical documentation may be requested for extended absences. 4. EMPLOYEE BENEFITS Eligible full-time employees receive health coverage and access to professional development programs. Employees should contact Human Resources for benefit eligibility and enrollment information."
+        }
+      ],
+      "sparse_results": [
+        {
+          "rank": 1,
+          "score": 4.103268694300627,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        },
+        {
+          "rank": 2,
+          "score": 0.6602198788875044,
+          "chunk_id": "hr_policy_chunk_0001",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": " POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should notify their manager as soon as reasonably possible. Medical documentation may be requested for extended absences. 4. EMPLOYEE BENEFITS Eligible full-time employees receive health coverage and access to professional development programs. Employees should contact Human Resources for benefit eligibility and enrollment information."
+        }
+      ],
+      "hybrid_results": [
+        {
+          "rank": 1,
+          "score": 0.03278688524590164,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        },
+        {
+          "rank": 2,
+          "score": 0.03225806451612903,
+          "chunk_id": "hr_policy_chunk_0001",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": " POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should notify their manager as soon as reasonably possible. Medical documentation may be requested for extended absences. 4. EMPLOYEE BENEFITS Eligible full-time employees receive health coverage and access to professional development programs. Employees should contact Human Resources for benefit eligibility and enrollment information."
+        }
+      ],
+      "dense_candidates": [
+        {
+          "rank": 1,
+          "score": 0.4102990925312042,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        },
+        {
+          "rank": 2,
+          "score": 0.3562226891517639,
+          "chunk_id": "hr_policy_chunk_0001",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": " POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should notify their manager as soon as reasonably possible. Medical documentation may be requested for extended absences. 4. EMPLOYEE BENEFITS Eligible full-time employees receive health coverage and access to professional development programs. Employees should contact Human Resources for benefit eligibility and enrollment information."
+        }
+      ],
+      "sparse_candidates": [
+        {
+          "rank": 1,
+          "score": 4.103268694300627,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        },
+        {
+          "rank": 2,
+          "score": 0.6602198788875044,
+          "chunk_id": "hr_policy_chunk_0001",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": " POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should notify their manager as soon as reasonably possible. Medical documentation may be requested for extended absences. 4. EMPLOYEE BENEFITS Eligible full-time employees receive health coverage and access to professional development programs. Employees should contact Human Resources for benefit eligibility and enrollment information."
+        },
+        {
+          "rank": 3,
+          "score": 0.0,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        }
+      ],
+      "dense_latency_ms": 4.6139999976730905,
+      "sparse_latency_ms": 0.0678329961374402,
+      "fusion_latency_ms": 0.016041005437728018,
+      "combined_latency_ms": 4.697873999248259
+    },
+    {
+      "query": "How frequently must employees change their passwords?",
+      "dense_results": [
+        {
+          "rank": 1,
+          "score": 0.41408586502075195,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        }
+      ],
+      "sparse_results": [
+        {
+          "rank": 1,
+          "score": 2.6481770286022477,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        },
+        {
+          "rank": 2,
+          "score": 1.1239607408225611,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        }
+      ],
+      "hybrid_results": [
+        {
+          "rank": 1,
+          "score": 0.03278688524590164,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        },
+        {
+          "rank": 2,
+          "score": 0.016129032258064516,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        }
+      ],
+      "dense_candidates": [
+        {
+          "rank": 1,
+          "score": 0.41408586502075195,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        }
+      ],
+      "sparse_candidates": [
+        {
+          "rank": 1,
+          "score": 2.6481770286022477,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        },
+        {
+          "rank": 2,
+          "score": 1.1239607408225611,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        },
+        {
+          "rank": 3,
+          "score": 1.0027251448559413,
+          "chunk_id": "it_security_chunk_0001",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE SECURITY Company devices must use approved security software. Employees must enable automatic security updates and lock their devices when unattended. Company data must not be transferred to unauthorized personal storage services."
+        },
+        {
+          "rank": 4,
+          "score": 0.7764706210310683,
+          "chunk_id": "hr_policy_chunk_0001",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": " POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should notify their manager as soon as reasonably possible. Medical documentation may be requested for extended absences. 4. EMPLOYEE BENEFITS Eligible full-time employees receive health coverage and access to professional development programs. Employees should contact Human Resources for benefit eligibility and enrollment information."
+        },
+        {
+          "rank": 5,
+          "score": 0.5674029916631427,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        }
+      ],
+      "dense_latency_ms": 3.838834003545344,
+      "sparse_latency_ms": 0.06483300239779055,
+      "fusion_latency_ms": 0.01412499841535464,
+      "combined_latency_ms": 3.917792004358489
+    },
+    {
+      "query": "What is the company's mileage reimbursement rate?",
+      "dense_results": [
+        {
+          "rank": 1,
+          "score": 0.425780713558197,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        }
+      ],
+      "sparse_results": [
+        {
+          "rank": 1,
+          "score": 2.30783912801199,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        },
+        {
+          "rank": 2,
+          "score": 1.3148400732816785,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        }
+      ],
+      "hybrid_results": [
+        {
+          "rank": 1,
+          "score": 0.03278688524590164,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        },
+        {
+          "rank": 2,
+          "score": 0.016129032258064516,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        }
+      ],
+      "dense_candidates": [
+        {
+          "rank": 1,
+          "score": 0.425780713558197,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        }
+      ],
+      "sparse_candidates": [
+        {
+          "rank": 1,
+          "score": 2.30783912801199,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        },
+        {
+          "rank": 2,
+          "score": 1.3148400732816785,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        },
+        {
+          "rank": 3,
+          "score": 1.0655921445049081,
+          "chunk_id": "finance_policy_p1_chunk_0001",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "nd a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval. Claims of 500 currency unit s or more require both manager and Finance department approval. Incomplete claims may be returned."
+        },
+        {
+          "rank": 4,
+          "score": 0.7620536949782519,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        },
+        {
+          "rank": 5,
+          "score": 0.27792427530938646,
+          "chunk_id": "it_security_chunk_0001",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE SECURITY Company devices must use approved security software. Employees must enable automatic security updates and lock their devices when unattended. Company data must not be transferred to unauthorized personal storage services."
+        }
+      ],
+      "dense_latency_ms": 6.2570840018452145,
+      "sparse_latency_ms": 0.06150000263005495,
+      "fusion_latency_ms": 0.012249998690094799,
+      "combined_latency_ms": 6.330834003165364
+    },
+    {
+      "query": "What is the weather forecast for tomorrow?",
+      "dense_results": [],
+      "sparse_results": [
+        {
+          "rank": 1,
+          "score": 0.802340080825138,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        },
+        {
+          "rank": 2,
+          "score": 0.7620536949782519,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        }
+      ],
+      "hybrid_results": [
+        {
+          "rank": 1,
+          "score": 0.01639344262295082,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        },
+        {
+          "rank": 2,
+          "score": 0.016129032258064516,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        }
+      ],
+      "dense_candidates": [],
+      "sparse_candidates": [
+        {
+          "rank": 1,
+          "score": 0.802340080825138,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        },
+        {
+          "rank": 2,
+          "score": 0.7620536949782519,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        },
+        {
+          "rank": 3,
+          "score": 0.339598238124521,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        },
+        {
+          "rank": 4,
+          "score": 0.29420183590234394,
+          "chunk_id": "finance_policy_p1_chunk_0001",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "nd a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval. Claims of 500 currency unit s or more require both manager and Finance department approval. Incomplete claims may be returned."
+        },
+        {
+          "rank": 5,
+          "score": 0.27792427530938646,
+          "chunk_id": "it_security_chunk_0001",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE SECURITY Company devices must use approved security software. Employees must enable automatic security updates and lock their devices when unattended. Company data must not be transferred to unauthorized personal storage services."
+        }
+      ],
+      "dense_latency_ms": 3.8669580026180483,
+      "sparse_latency_ms": 0.0630409995210357,
+      "fusion_latency_ms": 0.009542003681417555,
+      "combined_latency_ms": 3.9395410058205016
+    },
+    {
+      "query": "MFA",
+      "dense_results": [],
+      "sparse_results": [],
+      "hybrid_results": [],
+      "dense_candidates": [],
+      "sparse_candidates": [],
+      "dense_latency_ms": 3.9074169981176965,
+      "sparse_latency_ms": 0.029666996852029115,
+      "fusion_latency_ms": 0.007375005225185305,
+      "combined_latency_ms": 3.944459000194911
+    },
+    {
+      "query": "12 characters",
+      "dense_results": [],
+      "sparse_results": [
+        {
+          "rank": 1,
+          "score": 2.2657285689751263,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        }
+      ],
+      "hybrid_results": [
+        {
+          "rank": 1,
+          "score": 0.01639344262295082,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        }
+      ],
+      "dense_candidates": [],
+      "sparse_candidates": [
+        {
+          "rank": 1,
+          "score": 2.2657285689751263,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        }
+      ],
+      "dense_latency_ms": 3.462874999968335,
+      "sparse_latency_ms": 0.027833004423882812,
+      "fusion_latency_ms": 0.007041999197099358,
+      "combined_latency_ms": 3.497750003589317
+    },
+    {
+      "query": "500 currency units",
+      "dense_results": [
+        {
+          "rank": 1,
+          "score": 0.47881659865379333,
+          "chunk_id": "finance_policy_p1_chunk_0001",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "nd a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval. Claims of 500 currency unit s or more require both manager and Finance department approval. Incomplete claims may be returned."
+        }
+      ],
+      "sparse_results": [
+        {
+          "rank": 1,
+          "score": 2.794781103855947,
+          "chunk_id": "finance_policy_p1_chunk_0001",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "nd a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval. Claims of 500 currency unit s or more require both manager and Finance department approval. Incomplete claims may be returned."
+        },
+        {
+          "rank": 2,
+          "score": 2.27880456730971,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        }
+      ],
+      "hybrid_results": [
+        {
+          "rank": 1,
+          "score": 0.03278688524590164,
+          "chunk_id": "finance_policy_p1_chunk_0001",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "nd a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval. Claims of 500 currency unit s or more require both manager and Finance department approval. Incomplete claims may be returned."
+        },
+        {
+          "rank": 2,
+          "score": 0.016129032258064516,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        }
+      ],
+      "dense_candidates": [
+        {
+          "rank": 1,
+          "score": 0.47881659865379333,
+          "chunk_id": "finance_policy_p1_chunk_0001",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "nd a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval. Claims of 500 currency unit s or more require both manager and Finance department approval. Incomplete claims may be returned."
+        }
+      ],
+      "sparse_candidates": [
+        {
+          "rank": 1,
+          "score": 2.794781103855947,
+          "chunk_id": "finance_policy_p1_chunk_0001",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "nd a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval. Claims of 500 currency unit s or more require both manager and Finance department approval. Incomplete claims may be returned."
+        },
+        {
+          "rank": 2,
+          "score": 2.27880456730971,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        }
+      ],
+      "dense_latency_ms": 2.85874999826774,
+      "sparse_latency_ms": 0.031958996260073036,
+      "fusion_latency_ms": 0.009250004950445145,
+      "combined_latency_ms": 2.899958999478258
+    },
+    {
+      "query": "What is the annual leave allowance and when is medical documentation required?",
+      "dense_results": [
+        {
+          "rank": 1,
+          "score": 0.5351654887199402,
+          "chunk_id": "hr_policy_chunk_0001",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": " POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should notify their manager as soon as reasonably possible. Medical documentation may be requested for extended absences. 4. EMPLOYEE BENEFITS Eligible full-time employees receive health coverage and access to professional development programs. Employees should contact Human Resources for benefit eligibility and enrollment information."
+        },
+        {
+          "rank": 2,
+          "score": 0.40890249609947205,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        }
+      ],
+      "sparse_results": [
+        {
+          "rank": 1,
+          "score": 3.953815524911353,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        },
+        {
+          "rank": 2,
+          "score": 3.9264915205525055,
+          "chunk_id": "hr_policy_chunk_0001",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": " POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should notify their manager as soon as reasonably possible. Medical documentation may be requested for extended absences. 4. EMPLOYEE BENEFITS Eligible full-time employees receive health coverage and access to professional development programs. Employees should contact Human Resources for benefit eligibility and enrollment information."
+        }
+      ],
+      "hybrid_results": [
+        {
+          "rank": 1,
+          "score": 0.03252247488101534,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        },
+        {
+          "rank": 2,
+          "score": 0.03252247488101534,
+          "chunk_id": "hr_policy_chunk_0001",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": " POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should notify their manager as soon as reasonably possible. Medical documentation may be requested for extended absences. 4. EMPLOYEE BENEFITS Eligible full-time employees receive health coverage and access to professional development programs. Employees should contact Human Resources for benefit eligibility and enrollment information."
+        }
+      ],
+      "dense_candidates": [
+        {
+          "rank": 1,
+          "score": 0.5351654887199402,
+          "chunk_id": "hr_policy_chunk_0001",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": " POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should notify their manager as soon as reasonably possible. Medical documentation may be requested for extended absences. 4. EMPLOYEE BENEFITS Eligible full-time employees receive health coverage and access to professional development programs. Employees should contact Human Resources for benefit eligibility and enrollment information."
+        },
+        {
+          "rank": 2,
+          "score": 0.40890249609947205,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        },
+        {
+          "rank": 3,
+          "score": 0.3534911274909973,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        }
+      ],
+      "sparse_candidates": [
+        {
+          "rank": 1,
+          "score": 3.953815524911353,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        },
+        {
+          "rank": 2,
+          "score": 3.9264915205525055,
+          "chunk_id": "hr_policy_chunk_0001",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": " POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should notify their manager as soon as reasonably possible. Medical documentation may be requested for extended absences. 4. EMPLOYEE BENEFITS Eligible full-time employees receive health coverage and access to professional development programs. Employees should contact Human Resources for benefit eligibility and enrollment information."
+        },
+        {
+          "rank": 3,
+          "score": 1.7422642886875657,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        },
+        {
+          "rank": 4,
+          "score": 0.679196476249042,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        },
+        {
+          "rank": 5,
+          "score": 0.6495052242161825,
+          "chunk_id": "it_security_chunk_0001",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE SECURITY Company devices must use approved security software. Employees must enable automatic security updates and lock their devices when unattended. Company data must not be transferred to unauthorized personal storage services."
+        }
+      ],
+      "dense_latency_ms": 4.155916001764126,
+      "sparse_latency_ms": 0.07758399442536756,
+      "fusion_latency_ms": 0.01416700251866132,
+      "combined_latency_ms": 4.247666998708155
+    },
+    {
+      "query": "What is the remote work allowance and meal reimbursement limit?",
+      "dense_results": [
+        {
+          "rank": 1,
+          "score": 0.5588412284851074,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        },
+        {
+          "rank": 2,
+          "score": 0.44140201807022095,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        }
+      ],
+      "sparse_results": [
+        {
+          "rank": 1,
+          "score": 4.30775418170463,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        },
+        {
+          "rank": 2,
+          "score": 3.748177720274523,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        }
+      ],
+      "hybrid_results": [
+        {
+          "rank": 1,
+          "score": 0.03252247488101534,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        },
+        {
+          "rank": 2,
+          "score": 0.03252247488101534,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        }
+      ],
+      "dense_candidates": [
+        {
+          "rank": 1,
+          "score": 0.5588412284851074,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        },
+        {
+          "rank": 2,
+          "score": 0.44140201807022095,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        }
+      ],
+      "sparse_candidates": [
+        {
+          "rank": 1,
+          "score": 4.30775418170463,
+          "chunk_id": "hr_policy_chunk_0000",
+          "source": "hr_policy.txt",
+          "category": "HR",
+          "text": "NORTHSTAR TECHNOLOGIES EMPLOYEE HUMAN RESOURCES POLICY 1. REMOTE WORK POLICY Employees may work remotely up to three days per week. Employees must obtain approval from their direct manager before adopting a recurring remote work arrangement. Employees working remotely must remain available during their agreed working hours. Sensitive company information must only be accessed using approved company devices. 2. ANNUAL LEAVE POLICY Full-time employees receive 20 working days of annual paid leave per calendar year. Leave requests must be submitted through the employee portal at least five working days before the intended leave date. Manager approval is required. 3. SICK LEAVE POLICY Employees may take sick leave when they are unable to perform their duties because of illness. Employees should "
+        },
+        {
+          "rank": 2,
+          "score": 3.748177720274523,
+          "chunk_id": "finance_policy_p1_chunk_0000",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "NORTHSTAR TECHNOLOGIES FINANCE AND EXPENSE REIMBURSEMENT POLICY 1. BUSINESS EXPENSE ELIGIBILITY Employees may claim reimbursement for approved business-related travel, accommodation , meals and necessary business supplies. Personal expenses are not eligible for reimb ursement. 2. EXPENSE LIMITS Meal expenses are reimbursable up to 40 currency units per employee per day. Accommod ation expenses are reimbursable up to 150 currency units per night. Exceptions requir e advance approval from Finance. 3. REIMBURSEMENT PROCESS Employees must submit expense claims through the finance portal within 30 calendar da ys of the transaction. Each claim must include an itemized receipt and a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval."
+        },
+        {
+          "rank": 3,
+          "score": 1.2297642962310251,
+          "chunk_id": "it_security_chunk_0000",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "NORTHSTAR TECHNOLOGIES IT SECURITY AND ACCESS CONTROL POLICY 1. PASSWORD REQUIREMENTS All employees must use unique passwords for company accounts. Passwords must contain at least 12 characters and include a combination of uppercase letters, lowercase letters, numbers and symbols. Multi-factor authentication is mandatory. 2. ACCESS CONTROL Employees receive access only to systems and data required for their assigned responsibilities. Managers must approve access requests. Access permissions must be reviewed periodically. 3. SECURITY INCIDENT REPORTING Employees must report suspected phishing attacks, unauthorized access and potential data breaches to the IT Security team immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE S"
+        },
+        {
+          "rank": 4,
+          "score": 0.6495052242161825,
+          "chunk_id": "it_security_chunk_0001",
+          "source": "it_security.docx",
+          "category": "IT",
+          "text": "immediately. Incident reports must include the approximate time, affected systems and relevant observations. 4. DEVICE SECURITY Company devices must use approved security software. Employees must enable automatic security updates and lock their devices when unattended. Company data must not be transferred to unauthorized personal storage services."
+        },
+        {
+          "rank": 5,
+          "score": 0.5884036718046879,
+          "chunk_id": "finance_policy_p1_chunk_0001",
+          "source": "finance_policy.pdf",
+          "category": "Finance",
+          "text": "nd a description of the business purpose. 4. APPROVAL WORKFLOW Claims below 500 currency units require manager approval. Claims of 500 currency unit s or more require both manager and Finance department approval. Incomplete claims may be returned."
+        }
+      ],
+      "dense_latency_ms": 4.566333002003375,
+      "sparse_latency_ms": 0.09537499863654375,
+      "fusion_latency_ms": 0.015042001905385405,
+      "combined_latency_ms": 4.676750002545305
+    }
+  ]
+}

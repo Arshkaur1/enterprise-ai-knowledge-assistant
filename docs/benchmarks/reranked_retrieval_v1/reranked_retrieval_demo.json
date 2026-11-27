@@ -1,0 +1,433 @@
+{
+  "configuration": {
+    "reranker_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "device": "cpu",
+    "batch_size": 8,
+    "max_length": 512,
+    "candidate_k": 5,
+    "top_k": 2,
+    "dense_min_score": 0.35,
+    "sparse_min_score": null,
+    "reranker_min_score": null,
+    "dense_weight": 1.0,
+    "sparse_weight": 1.0,
+    "rrf_k": 60,
+    "warmup_requests_per_pipeline": 5
+  },
+  "total_questions": 6,
+  "total_pipelines": 2,
+  "results": [
+    {
+      "pipeline": "dense_reranked",
+      "query": "What is the minimum password length?",
+      "expected_answerable": true,
+      "retrieval_nonempty": true,
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "rank": 1,
+          "score": 0.42293375730514526,
+          "chunk_id": "it_security_chunk_0000"
+        }
+      ],
+      "reranked_results": [
+        {
+          "rank": 1,
+          "logit": -8.391751289367676,
+          "chunk_id": "it_security_chunk_0000"
+        }
+      ],
+      "latency_ms": 10.024749994045123
+    },
+    {
+      "pipeline": "dense_reranked",
+      "query": "How frequently must employees change their passwords?",
+      "expected_answerable": false,
+      "retrieval_nonempty": true,
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "rank": 1,
+          "score": 0.41408586502075195,
+          "chunk_id": "it_security_chunk_0000"
+        }
+      ],
+      "reranked_results": [
+        {
+          "rank": 1,
+          "logit": 1.1529103517532349,
+          "chunk_id": "it_security_chunk_0000"
+        }
+      ],
+      "latency_ms": 11.521624997840263
+    },
+    {
+      "pipeline": "dense_reranked",
+      "query": "How many paid maternity leave days are provided?",
+      "expected_answerable": false,
+      "retrieval_nonempty": true,
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "rank": 1,
+          "score": 0.4102990925312042,
+          "chunk_id": "hr_policy_chunk_0000"
+        },
+        {
+          "rank": 2,
+          "score": 0.3562226891517639,
+          "chunk_id": "hr_policy_chunk_0001"
+        }
+      ],
+      "reranked_results": [
+        {
+          "rank": 1,
+          "logit": -3.9965760707855225,
+          "chunk_id": "hr_policy_chunk_0000"
+        },
+        {
+          "rank": 2,
+          "logit": -10.178775787353516,
+          "chunk_id": "hr_policy_chunk_0001"
+        }
+      ],
+      "latency_ms": 15.016042001661845
+    },
+    {
+      "pipeline": "dense_reranked",
+      "query": "How many days per week can employees work remotely?",
+      "expected_answerable": true,
+      "retrieval_nonempty": true,
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "rank": 1,
+          "score": 0.5636751651763916,
+          "chunk_id": "hr_policy_chunk_0000"
+        }
+      ],
+      "reranked_results": [
+        {
+          "rank": 1,
+          "logit": 7.670859336853027,
+          "chunk_id": "hr_policy_chunk_0000"
+        }
+      ],
+      "latency_ms": 10.828334008692764
+    },
+    {
+      "pipeline": "dense_reranked",
+      "query": "What is the expense submission deadline and who approves claims of 500 currency units or more?",
+      "expected_answerable": true,
+      "retrieval_nonempty": true,
+      "candidate_count": 2,
+      "candidates": [
+        {
+          "rank": 1,
+          "score": 0.5980431437492371,
+          "chunk_id": "finance_policy_p1_chunk_0001"
+        },
+        {
+          "rank": 2,
+          "score": 0.558954119682312,
+          "chunk_id": "finance_policy_p1_chunk_0000"
+        }
+      ],
+      "reranked_results": [
+        {
+          "rank": 1,
+          "logit": 3.6845364570617676,
+          "chunk_id": "finance_policy_p1_chunk_0001"
+        },
+        {
+          "rank": 2,
+          "logit": 3.5914855003356934,
+          "chunk_id": "finance_policy_p1_chunk_0000"
+        }
+      ],
+      "latency_ms": 17.406583996489644
+    },
+    {
+      "pipeline": "dense_reranked",
+      "query": "What is the weather forecast for tomorrow?",
+      "expected_answerable": false,
+      "retrieval_nonempty": false,
+      "candidate_count": 0,
+      "candidates": [],
+      "reranked_results": [],
+      "latency_ms": 3.084457988734357
+    },
+    {
+      "pipeline": "hybrid_reranked",
+      "query": "What is the minimum password length?",
+      "expected_answerable": true,
+      "retrieval_nonempty": true,
+      "candidate_count": 5,
+      "candidates": [
+        {
+          "rank": 1,
+          "score": 0.03278688524590164,
+          "chunk_id": "it_security_chunk_0000"
+        },
+        {
+          "rank": 2,
+          "score": 0.016129032258064516,
+          "chunk_id": "hr_policy_chunk_0000"
+        },
+        {
+          "rank": 3,
+          "score": 0.015873015873015872,
+          "chunk_id": "finance_policy_p1_chunk_0000"
+        },
+        {
+          "rank": 4,
+          "score": 0.015625,
+          "chunk_id": "finance_policy_p1_chunk_0001"
+        },
+        {
+          "rank": 5,
+          "score": 0.015384615384615385,
+          "chunk_id": "it_security_chunk_0001"
+        }
+      ],
+      "reranked_results": [
+        {
+          "rank": 1,
+          "logit": -8.391753196716309,
+          "chunk_id": "it_security_chunk_0000"
+        },
+        {
+          "rank": 2,
+          "logit": -11.288142204284668,
+          "chunk_id": "it_security_chunk_0001"
+        }
+      ],
+      "latency_ms": 30.8729999960633
+    },
+    {
+      "pipeline": "hybrid_reranked",
+      "query": "How frequently must employees change their passwords?",
+      "expected_answerable": false,
+      "retrieval_nonempty": true,
+      "candidate_count": 5,
+      "candidates": [
+        {
+          "rank": 1,
+          "score": 0.03278688524590164,
+          "chunk_id": "it_security_chunk_0000"
+        },
+        {
+          "rank": 2,
+          "score": 0.016129032258064516,
+          "chunk_id": "hr_policy_chunk_0000"
+        },
+        {
+          "rank": 3,
+          "score": 0.015873015873015872,
+          "chunk_id": "it_security_chunk_0001"
+        },
+        {
+          "rank": 4,
+          "score": 0.015625,
+          "chunk_id": "hr_policy_chunk_0001"
+        },
+        {
+          "rank": 5,
+          "score": 0.015384615384615385,
+          "chunk_id": "finance_policy_p1_chunk_0000"
+        }
+      ],
+      "reranked_results": [
+        {
+          "rank": 1,
+          "logit": 1.1529121398925781,
+          "chunk_id": "it_security_chunk_0000"
+        },
+        {
+          "rank": 2,
+          "logit": -5.310790538787842,
+          "chunk_id": "it_security_chunk_0001"
+        }
+      ],
+      "latency_ms": 31.91670900559984
+    },
+    {
+      "pipeline": "hybrid_reranked",
+      "query": "How many paid maternity leave days are provided?",
+      "expected_answerable": false,
+      "retrieval_nonempty": true,
+      "candidate_count": 3,
+      "candidates": [
+        {
+          "rank": 1,
+          "score": 0.03278688524590164,
+          "chunk_id": "hr_policy_chunk_0000"
+        },
+        {
+          "rank": 2,
+          "score": 0.03225806451612903,
+          "chunk_id": "hr_policy_chunk_0001"
+        },
+        {
+          "rank": 3,
+          "score": 0.015873015873015872,
+          "chunk_id": "finance_policy_p1_chunk_0000"
+        }
+      ],
+      "reranked_results": [
+        {
+          "rank": 1,
+          "logit": -3.996575117111206,
+          "chunk_id": "hr_policy_chunk_0000"
+        },
+        {
+          "rank": 2,
+          "logit": -10.178775787353516,
+          "chunk_id": "hr_policy_chunk_0001"
+        }
+      ],
+      "latency_ms": 21.026249989517964
+    },
+    {
+      "pipeline": "hybrid_reranked",
+      "query": "How many days per week can employees work remotely?",
+      "expected_answerable": true,
+      "retrieval_nonempty": true,
+      "candidate_count": 5,
+      "candidates": [
+        {
+          "rank": 1,
+          "score": 0.03278688524590164,
+          "chunk_id": "hr_policy_chunk_0000"
+        },
+        {
+          "rank": 2,
+          "score": 0.016129032258064516,
+          "chunk_id": "finance_policy_p1_chunk_0000"
+        },
+        {
+          "rank": 3,
+          "score": 0.015873015873015872,
+          "chunk_id": "hr_policy_chunk_0001"
+        },
+        {
+          "rank": 4,
+          "score": 0.015625,
+          "chunk_id": "it_security_chunk_0000"
+        },
+        {
+          "rank": 5,
+          "score": 0.015384615384615385,
+          "chunk_id": "it_security_chunk_0001"
+        }
+      ],
+      "reranked_results": [
+        {
+          "rank": 1,
+          "logit": 7.670857906341553,
+          "chunk_id": "hr_policy_chunk_0000"
+        },
+        {
+          "rank": 2,
+          "logit": -8.892501831054688,
+          "chunk_id": "finance_policy_p1_chunk_0000"
+        }
+      ],
+      "latency_ms": 32.068916014395654
+    },
+    {
+      "pipeline": "hybrid_reranked",
+      "query": "What is the expense submission deadline and who approves claims of 500 currency units or more?",
+      "expected_answerable": true,
+      "retrieval_nonempty": true,
+      "candidate_count": 5,
+      "candidates": [
+        {
+          "rank": 1,
+          "score": 0.03278688524590164,
+          "chunk_id": "finance_policy_p1_chunk_0001"
+        },
+        {
+          "rank": 2,
+          "score": 0.03225806451612903,
+          "chunk_id": "finance_policy_p1_chunk_0000"
+        },
+        {
+          "rank": 3,
+          "score": 0.015873015873015872,
+          "chunk_id": "it_security_chunk_0000"
+        },
+        {
+          "rank": 4,
+          "score": 0.015625,
+          "chunk_id": "hr_policy_chunk_0000"
+        },
+        {
+          "rank": 5,
+          "score": 0.015384615384615385,
+          "chunk_id": "it_security_chunk_0001"
+        }
+      ],
+      "reranked_results": [
+        {
+          "rank": 1,
+          "logit": 3.6845364570617676,
+          "chunk_id": "finance_policy_p1_chunk_0001"
+        },
+        {
+          "rank": 2,
+          "logit": 3.5914855003356934,
+          "chunk_id": "finance_policy_p1_chunk_0000"
+        }
+      ],
+      "latency_ms": 34.85208399069961
+    },
+    {
+      "pipeline": "hybrid_reranked",
+      "query": "What is the weather forecast for tomorrow?",
+      "expected_answerable": false,
+      "retrieval_nonempty": true,
+      "candidate_count": 5,
+      "candidates": [
+        {
+          "rank": 1,
+          "score": 0.01639344262295082,
+          "chunk_id": "it_security_chunk_0000"
+        },
+        {
+          "rank": 2,
+          "score": 0.016129032258064516,
+          "chunk_id": "hr_policy_chunk_0000"
+        },
+        {
+          "rank": 3,
+          "score": 0.015873015873015872,
+          "chunk_id": "finance_policy_p1_chunk_0000"
+        },
+        {
+          "rank": 4,
+          "score": 0.015625,
+          "chunk_id": "finance_policy_p1_chunk_0001"
+        },
+        {
+          "rank": 5,
+          "score": 0.015384615384615385,
+          "chunk_id": "it_security_chunk_0001"
+        }
+      ],
+      "reranked_results": [
+        {
+          "rank": 1,
+          "logit": -11.1769380569458,
+          "chunk_id": "it_security_chunk_0000"
+        },
+        {
+          "rank": 2,
+          "logit": -11.177288055419922,
+          "chunk_id": "finance_policy_p1_chunk_0000"
+        }
+      ],
+      "latency_ms": 31.895457999780774
+    }
+  ]
+}
