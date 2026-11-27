@@ -1,24 +1,24 @@
+
 # Enterprise AI Knowledge Assistant
 
-**An end-to-end Retrieval-Augmented Generation (RAG) system for enterprise document intelligence, featuring configurable retrieval pipelines, local LLM inference, automated evaluation, REST APIs and an interactive user interface.**
+An end-to-end Retrieval-Augmented Generation (RAG) system that enables users to query enterprise documents and receive contextual, source-backed answers using locally hosted language models.
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-ML-orange)
 ![FAISS](https://img.shields.io/badge/FAISS-Vector_Search-green)
-![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688)
-![Streamlit](https://img.shields.io/badge/Streamlit-Frontend-FF4B4B)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-teal)
+![Streamlit](https://img.shields.io/badge/Streamlit-Frontend-red)
 ![Ollama](https://img.shields.io/badge/Ollama-Local_LLM-black)
-![Tests](https://img.shields.io/badge/Tests-663%2B_Previously_Passed-brightgreen)
 
 ## Project Overview
 
-Enterprise organizations maintain large volumes of unstructured information across policy documents, operational guidelines and internal knowledge repositories. Traditional keyword-based search often struggles to retrieve relevant information and provide contextual answers.
+Enterprise information is often scattered across policy documents, operational guidelines and internal knowledge repositories, making information retrieval time-consuming.
 
-The Enterprise AI Knowledge Assistant addresses this challenge through a modular Retrieval-Augmented Generation architecture that enables users to query enterprise documents using natural language and receive contextual answers with traceable source citations.
+This project addresses that problem by combining intelligent document processing, information retrieval and generative AI into a single application.
 
-The system combines semantic search, lexical retrieval, reciprocal rank fusion, cross-encoder reranking and local language model inference. It also incorporates automated evaluation frameworks to measure retrieval quality, generation performance, latency and insufficient-evidence handling.
+Users can ask natural-language questions about HR policies, IT security and financial procedures, receive answers with source citations, and inspect retrieval and execution metrics.
 
-The project demonstrates the complete development lifecycle of an applied AI system, from document ingestion and experimentation to API serving and application development.
+**The objective:** Engineer an AI system that balances retrieval quality, response reliability, computational efficiency and maintainability.
 
 ## Application Demo
 
@@ -26,9 +26,9 @@ The project demonstrates the complete development lifecycle of an applied AI sys
 
 ![Application Homepage](docs/screenshots/homepage.png)
 
-### Contextual Answers with Source Citations
+### Source-Backed Answers
 
-![Cited Answer](docs/screenshots/cited_answer.png)
+![Answer with Citations](docs/screenshots/cited_answer.png)
 
 ### Insufficient-Evidence Handling
 
@@ -36,7 +36,167 @@ The project demonstrates the complete development lifecycle of an applied AI sys
 
 ## Key Results
 
-| Performance Indicator | Result |
+| Performance Metric | Result |
+|---|---:|
+| Calibration Recall@2 | 100% |
+| Mean Reciprocal Rank | 0.9643 → 1.000 |
+| Dense retrieval P95 latency | 3.70 ms |
+| Calibrated reranking P95 latency | 20.42 ms |
+| Reduction in mean reranking retrieval latency* | 64% |
+| Reduction in reranking candidates* | 71.1% |
+| Retrieval configurations evaluated | 7 |
+| Measured retrieval requests | 1,260 |
+| Verified automated test milestone | 663 passed |
+
+\*Compared with expanded dense reranking.
+
+Benchmarks were conducted locally using three synthetic enterprise documents, six chunks and 18 calibration queries. These are controlled experimental results, not production-scale performance guarantees.
+
+## System Architecture
+
+```mermaid
+flowchart TD
+    A[PDF / DOCX / TXT Documents] --> B[Extraction, Cleaning and Chunking]
+    B --> C[MiniLM Embeddings]
+    B --> D[Chunk Metadata]
+    C --> E[FAISS Vector Index]
+
+    F[User - Streamlit] --> G[FastAPI]
+    G --> H[Retriever Factory]
+    E --> H
+    D --> H
+
+    H --> I[Dense / BM25 / Hybrid / Reranked Retrieval]
+    I --> J[Context and Prompt Builder]
+    J --> K[Qwen2.5 via Ollama]
+    K --> L[Response and Citation Validation]
+    L --> M[Answer or Abstention]
+    M --> F
+```
+
+The system operates through two pipelines:
+
+- **Offline:** Process documents, generate embeddings and persist searchable indexes with metadata.
+- **Online:** Retrieve relevant evidence, construct context, generate an answer and validate source references.
+
+## Core Capabilities
+
+- **Document intelligence:** PDF, DOCX and TXT ingestion, overlapping chunking, metadata tracking and SHA-256 artifact validation.
+- **Information retrieval:** Four configurable retrieval strategies with strategy-specific relevance thresholds.
+- **Local generative AI:** Qwen2.5:1.5B, structured responses, citations and insufficient-evidence handling.
+- **Evaluation:** Automated retrieval, generation, ranking, latency and answerability measurements.
+- **Application engineering:** FastAPI backend, Streamlit interface, modular Python architecture and regression testing.
+
+## Retrieval Experiments
+
+| Strategy | Recall@2 | MRR | FAR | P95 |
+|---|---:|---:|---:|---:|
+| Dense | 100% | 0.9643 | 50% | 3.70 ms |
+| BM25 | 100% | 1.000 | 100% | 0.07 ms |
+| Hybrid RRF | 100% | 1.000 | 100% | 3.70 ms |
+| Calibrated dense reranking | 100% | 1.000 | 50% | 20.42 ms |
+
+FAR = false acceptance rate, measured using nonempty retrieval as an answerability proxy.
+
+### Key Engineering Decisions
+
+- **Dense retrieval retained as default:** Strong balance between retrieval quality and computational cost.
+- **Cross-encoder reranking made optional:** Improved ranking quality while candidate filtering reduced computational overhead.
+- **Prompt V1 retained:** Achieved higher citation F1 (90.48% vs. 83.33%) with fewer tokens than V2.
+- **Mandatory grounding verifiers rejected:** Additional complexity did not yield sufficient reliability improvements.
+
+**Key learning:** Perfect retrieval recall does not guarantee factual correctness. Retrieval relevance, evidence sufficiency and generation reliability must be evaluated separately.
+
+[Explore detailed experimental reports](docs/benchmarks/)
+
+## Technology Stack
+
+| Layer | Technologies |
+|---|---|
+| Language & ML | Python, PyTorch, NumPy |
+| Embeddings | Sentence Transformers, all-MiniLM-L6-v2 |
+| Retrieval | FAISS, BM25, Reciprocal Rank Fusion |
+| Reranking | MS MARCO MiniLM Cross-Encoder |
+| Generation | Qwen2.5:1.5B, Ollama |
+| Backend & UI | FastAPI, Uvicorn, Streamlit |
+| Engineering | Pytest, Ruff, Git |
+
+## Getting Started
+
+Prerequisites: Python 3.11, Git and [Ollama](https://ollama.com/).
+
+```bash
+git clone https://github.com/Arshkaur1/enterprise-ai-knowledge-assistant.git
+cd enterprise-ai-knowledge-assistant
+
+python3.11 -m venv .venv
+source .venv/bin/activate
+
+pip install -e ".[llm,documents,embeddings,retrieval,api,dev]"
+
+ollama pull qwen2.5:1.5b
+```
+
+Place documents in `data/raw/` and run the ingestion and indexing pipeline to generate the required FAISS index, metadata and manifest in `artifacts/`.
+
+Generated artifacts and raw documents are excluded from version control.
+
+Start Ollama if it is not already running:
+
+```bash
+ollama serve
+```
+
+Start the backend and frontend in separate activated terminals:
+
+```bash
+python -m uvicorn knowledge_assistant.api:app --host 127.0.0.1 --port 8000
+```
+
+```bash
+python -m streamlit run app.py
+```
+
+- Application: http://localhost:8501
+- API documentation: http://localhost:8000/docs
+
+### Testing
+
+```bash
+pytest -q
+ruff check src tests scripts app.py
+```
+
+## Repository Structure
+
+```text
+enterprise-ai-knowledge-assistant/
+├── src/knowledge_assistant/  # Core RAG components
+├── scripts/                  # Experiments and evaluation
+├── tests/                    # Automated tests
+├── data/                     # Document and evaluation data
+├── artifacts/                # Generated retrieval artifacts
+├── docs/                     # Documentation and benchmarks
+├── app.py                    # Streamlit application
+└── pyproject.toml            # Project dependencies
+```
+
+## Limitations & Future Work
+
+The current implementation is a local MVP. Citation validation verifies structural consistency but does not guarantee factual grounding.
+
+Future work includes larger independent evaluation datasets, semantic chunking, improved hallucination detection, Docker deployment, access control and production monitoring.
+
+## Author
+
+**Arshdeep Kaur**
+
+Master of Data Science and Analytics — Business Analytics  
+University of Calgary, Canada
+
+Developed as an applied AI engineering project, with ChatGPT supporting architectural exploration, implementation, debugging, experimentation and documentation.
+
+[GitHub Profile](https://github.com/Arshkaur1)
 |---|---:|
 | Calibration retrieval Recall@2 | 100% |
 | Best Mean Reciprocal Rank | 1.0000 |
